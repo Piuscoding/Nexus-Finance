@@ -1,0 +1,1616 @@
+
+<!doctype html>
+<html lang="en">
+
+<head>
+
+   <!-- @Partial - Require Stylers -->
+   
+<link rel="stylesheet" href="../_presets/libs/swiper/swiper-bundle.min.css" />
+
+<!-- Required meta tags -->
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+
+<!-- Favicon icon-->
+<link rel="apple-touch-icon" sizes="180x180" href="../_presets/images/favicon/apple-touch-icon.png" />
+<link rel="icon" type="image/png" sizes="32x32" href="../_presets/images/favicon/favicon-32x32.png" />
+<link rel="icon" type="image/png" sizes="16x16" href="../_presets/images/favicon/favicon-16x16.png" />
+<link rel="mask-icon" href="../_presets/images/favicon/block-safari-pinned-tab.svg" color="#8b3dff" />
+<link rel="shortcut icon" href="../_presets/images/favicon/favicon.ico" />
+<meta name="msapplication-TileColor" content="#8b3dff" />
+<meta name="msapplication-config" content="../_presets/images/favicon/tile.xml" />
+
+<!-- Color modes -->
+<script src="../_presets/js/vendors/color-modes.js"></script>
+
+<!-- Libs CSS -->
+<link href="../_presets/libs/simplebar/dist/simplebar.min.css" rel="stylesheet" />
+<link href="../_presets/libs/bootstrap-icons/font/bootstrap-icons.min.css" rel="stylesheet" />
+
+<!-- Scroll Cue -->
+<link rel="stylesheet" href="../_presets/libs/scrollcue/scrollCue.css" />
+
+<!-- Box icons -->
+<link rel="stylesheet" href="../_presets/fonts/css/boxicons.min.css" />
+
+<!-- Theme CSS -->
+<link rel="stylesheet" href="../_presets/css/theme.min.css">
+
+<!-- Custom CSS -->
+<link rel="stylesheet" href="../_presets/css/custom.css">
+
+ <!-- BOOSTRAP -->
+ <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous"> -->
+ <!--  -->
+   <title>Dashboard - Business & Personal Banking Solution | Nexus Finance</title>
+
+</head>
+
+<body>
+
+   <!-- @Partial - Require Header -->
+   <!-- Navbar -->
+<header>
+    <nav class="navbar navbar-expand-lg navbar-light w-100">
+        <div class="container px-3">
+            <a class="navbar-brand mt-n1" href="../"><img src="../_presets/images/logo/logo.svg" alt /></a>
+            <button class="navbar-toggler offcanvas-nav-btn" type="button">
+                <i class="bi bi-list"></i>
+            </button>
+            <div class="offcanvas offcanvas-start offcanvas-nav" style="width: 20rem">
+                <div class="offcanvas-header">
+                    <a href="../" class="text-inverse"><img src="../_presets/images/logo/logo.svg" alt /></a>
+                    <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                </div>
+                <div class="offcanvas-body pt-0 align-items-center">
+                    <ul class="navbar-nav mx-auto align-items-lg-center">
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">About</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Services</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">FAQs</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Contact Us</a>
+                        </li>
+                    </ul>
+                    <div class="mt-3 mt-lg-0 d-flex align-items-center d-none d-lg-block">
+                        <a href="./" class="btn btn-light border border-primary border-dashed text-primary mx-2"><i class="bi-door-open me-2"></i>Dashboard</a>
+                        <a href="/logout" class="btn btn-dark">
+                            <i class="bi-power"></i>
+                            Sign Out                        </a>
+                    </div>
+                    <div class="mt-2 mt-lg-0 row g-3 d-lg-none" id="mobile-btn-layouts">
+                        <a href="./" class="btn btn-light border border-primary border-dashed text-primary"><i class="bi-door-open me-2"></i>Dashboard</a>
+                        <a href="/logout" class="btn btn-dark">
+                            <i class="bi-power"></i>
+                            Sign Out                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+</header>
+
+
+<main>
+    <!--Account home start-->
+    <% if(infoSubmitObj != '') { %>
+        <div class="col-8 alert alert-success" role="alert">
+          <%= infoSubmitObj %>
+        </div>
+      <% } %>
+    
+      <% if(infoErrorsObj != '') { %>
+        <div class="col-8 alert alert-danger" role="alert">
+          <%= infoErrorsObj[0].message %>
+        </div>
+      <% } %>
+    <section class="py-lg-7 py-5 bg-light-subtle">
+       <div class="container">
+          <div class="row">
+ 
+             <!-- @Partial - Require Navbar -->
+             <div class="col-lg-3 col-md-4">
+ 
+  <div class="d-flex align-items-center mb-4 justify-content-center justify-content-md-start bg-white p-3 rounded-4 border border-dashed">
+ 
+      <!-- Avatar -->
+                  <img src="/IMG_UPLOADS<%=user.image%>" alt="avatar" class="account_avatar avatar avatar-lg rounded-3">
+      
+      <div class="ms-3">
+          <h5 class="mb-0 text-truncate text-primary text-uppercase fs-6 mt-2" style="max-width: 140px;">
+              <%=user.fullname%>            </h5>
+          <p class="text-truncate mb-0" style="max-width: 140px;">
+             <%=user.email%>              </p>
+      </div>
+ 
+  </div>
+ 
+  <div id="google_translate_element" class="google_translate_element"></div>
+ 
+  <!-- Navbar -->
+  <div class="d-md-none text-center d-grid">
+      <button class="btn btn-light mb-3 d-flex align-items-center justify-content-between" type="button" data-bs-toggle="collapse" data-bs-target="#collapseAccountMenu" aria-expanded="false" aria-controls="collapseAccountMenu">
+          Dashboard Menu
+          <i class="bi bi-list ms-2 fw-bold"></i>
+      </button>
+  </div>
+ 
+  <div class="collapse d-md-block" id="collapseAccountMenu">
+      <ul class="nav flex-column bg-white p-4 rounded-4 border border-dashed nav-account mb-3">
+ 
+          <span class="small mb-2 fw-light"><i class="bi-indent"></i> Account Overview</span>
+          <div class="mb-2">
+              <li class="nav-item">
+                  <a class="nav-link" href="/dashboard">
+                      <i class="align-bottom bi-house-door"></i>
+                      <span class="ms-2 fw-light small">My Dashboard</span>
+                  </a>
+              </li>
+          </div>
+ 
+                          <span class="small mb-2 fw-light"><i class="bi-indent"></i> Financial Manager</span>
+              <div class="mb-2">
+                  <li class="nav-item">
+                      <a class="nav-link" href="javascript:void(0);" data-bs-toggle="modal" data-bs-target="#moneyTransferModal">
+                          <i class="align-bottom bi-cash-coin"></i>
+                          <span class="ms-2 fw-light small">Transfer Money</span>
+                      </a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="/t_history/<%=user._id%>">
+                        <i class="align-bottom bi-clock-history"></i>
+                        <span class="ms-2 fw-light small">Transfer History</span>
+                    </a>
+                </li>
+                  <li class="nav-item">
+                      <a class="nav-link" href="javascript:void(0);" data-bs-toggle="modal" data-bs-target="#virtualCardManagerModal">
+                          <i class="align-bottom bi-credit-card-2-back"></i>
+                          <span class="ms-2 fw-light small">Manage V-Card</span>
+                      </a>
+                  </li>
+              </div>
+ 
+              <span class="small mb-2 fw-light"><i class="bi-indent"></i> Loan Management</span>
+              <div class="mb-2">
+                  <li class="nav-item">
+                      <a class="nav-link" href="javascript:void(0);" data-bs-toggle="modal" data-bs-target="#loanRequestModal">
+                          <i class="align-bottom bi-diagram-3"></i>
+                          <span class="ms-2 fw-light small">Request For Loan</span>
+                      </a>
+                  </li>
+                  <li class="nav-item">
+                      <a class="nav-link" href="/myloans/<%=user._id%>">
+                          <i class="align-bottom bi-clock-history"></i>
+                          <span class="ms-2 fw-light small">See Loan History</span>
+                      </a>
+                  </li>
+              </div>
+          
+          <span class="small fw-light"><i class="bi-indent"></i> Manage Account</span>
+          <div class="mb-2">
+              <li class="nav-item">
+                  <a class="nav-link" href="javascript:void(0);" data-bs-toggle="modal" data-bs-target="#settingsConfigurationModal">
+                      <i class="align-bottom bi-gear"></i>
+                      <span class="ms-2 fw-light small">Configure Settings</span>
+                  </a>
+              </li>
+              <li class="nav-item">
+                  <a class="nav-link" href="javascript:void(0);" data-bs-toggle="modal" data-bs-target="#avatarModifcationModal">
+                      <i class="align-bottom bi-person-bounding-box"></i>
+                      <span class="ms-2 fw-light small">Update My Avatar</span>
+                  </a>
+              </li>
+              <li class="nav-item">
+                  <a class="nav-link" href="javascript:void(0);" data-bs-toggle="modal" data-bs-target="#securityConfigurationModal">
+                      <i class="align-bottom bi-shield-lock"></i>
+                      <span class="ms-2 fw-light small">Configure Security</span>
+                  </a>
+              </li>
+          </div>
+ 
+      </ul>
+  </div>
+ </div>
+             <div class="col-lg-9 col-md-8">
+                                     <div class="col-md-4 d-md-none">
+                      <div data-bs-toggle="modal" data-bs-target="#moneyTransferModal" class="w-100 btn btn-primary">
+                         <i class="bi-battery-charging me-2"></i>Make New Transfer
+                      </div>
+                   </div>
+                
+                <div class="mb-3 mt-3">
+                   <h1 class="mb-0 h3"><span id="" class="fw-light me-2"><i class="bi-sunrise me-2"></i> </span>Greetings<span class="text-primary">@<%=user.username%></span></h1>
+                </div>
+                <div class="mb-3">
+                   <h4 class="mb-1 fw-light initialism text-primary"><i class="bi-ui-checks-grid me-2"></i>Account Overview</h4>
+                   <p class="mb-0 fs-6">This section provides a detailed overview of your account and related activities.</p>
+                </div>
+ 
+                <div class="row mb-5 g-3">
+                                           <div class="col-lg-4 col-md-6">
+                         <div class="card border border-dashed shadow-sm">
+                            <div class="card-body">
+                               <h6 class="card-subtitle d-flex align-items-center text-dark initialism fw-light mb-0">
+                                  <span class="border border-dashed border-primary badge bg-light-subtle me-1 rounded-1 pt-1">
+                                     <i class="bi-boxes text-primary"></i>
+                                  </span>
+                                  Account Number
+                               </h6>
+ 
+                               
+                               <h3 class="mt-2 fw-light fs-4 mb-2">
+                                 <%=user.accNo%>                                </h3>
+ 
+                               <span class="badge bg-light-subtle rounded-1 border border-dashed border-primary fw-light text-primary">
+                                  <%= new Date().getDate() %> <%= new Date().toLocaleString('default', {month: 'long'});  %>,<%= new Date().getFullYear();  %>                                </span>
+                            </div>
+                         </div>
+                      </div>
+ 
+                      <div class="col-lg-4 col-md-6">
+                         <div class="card border border-dashed shadow-sm">
+                            <div class="card-body">
+                               <h6 class="card-subtitle d-flex align-items-center text-dark initialism fw-light mb-0">
+                                  <span class="border border-dashed border-primary badge bg-light-subtle me-1 rounded-1 pt-1">
+                                     <i class="bi-boxes text-primary"></i>
+                                  </span>
+                                  Account Balance
+                               </h6>
+                               <h3 class="mt-2 fw-light fs-4 mb-2">
+                                  $<%=user.balance%>.00                                 </h3>
+                               <span class="badge bg-light-subtle rounded-1 border border-dashed border-primary fw-light text-primary">
+                                  Source Account:<%=user.account%>                                </span>
+                            </div>
+                         </div>
+                      </div>
+ 
+                      
+                      <div class="col-lg-4 col-md-6">
+                         <div class="card border border-dashed shadow-sm">
+                            <div class="card-body">
+                               <h6 class="card-subtitle d-flex align-items-center text-dark initialism fw-light mb-0">
+                                  <span class="border border-dashed border-primary badge bg-light-subtle me-1 rounded-1 pt-1">
+                                     <i class="bi-boxes text-primary"></i>
+                                  </span>
+                                  Recent Transfer
+                               </h6>
+                               <h3 class="mt-2 fw-light fs-4 mb-2">
+                                  -- / --                                 </h3>
+                               <a href="javascript:void(0);" data-bs-toggle="modal" data-bs-target="#txnReceiptPreviewModal" data-bs-txn-payload="null" class="badge bg-light-subtle rounded-1 border border-dashed border-primary fw-light text-primary">
+                                  View Transaction Receipt
+                               </a>
+                            </div>
+                         </div>
+                      </div>
+ 
+                      <h4 class="mb-0 fw-light initialism text-primary mt-4">
+                         <i class="bi-ui-checks-grid me-2"></i>Quick Action Menu
+                      </h4>
+ 
+                      <div class="col-md-12 mb-2">
+                         <!-- Card -->
+                         <div class="card border border-dashed h-100">
+                            <div class="card-body p-3">
+                               <div class="row g-3">
+                                  <div class="col-xl-4 d-none d-md-block">
+                                     <div style="cursor: pointer;" data-bs-toggle="modal" data-bs-target="#moneyTransferModal" class="card bg-primary text-light rounded-3">
+                                        <div class="card-body py-2 fs-5 text-center">
+                                           <i class="bi-battery-charging me-2"></i>Make New Transfer
+                                        </div>
+                                     </div>
+                                  </div>
+                                  <div class="col-xl-4">
+                                     <div style="cursor: pointer;" data-bs-toggle="modal" data-bs-target="#virtualCardManagerModal" class="card bg-primary text-light rounded-3">
+                                        <div class="card-body py-2 fs-5 text-center">
+                                           <i class="bi-battery-charging me-2"></i>Manage Virtual Card
+                                        </div>
+                                     </div>
+                                  </div>
+                                  <div class="col-xl-4">
+                                     <div style="cursor: pointer;" data-bs-toggle="modal" data-bs-target="#loanRequestModal" class="card bg-primary text-light rounded-3">
+                                        <div class="card-body py-2 fs-5 text-center">
+                                           <i class="bi-battery-charging me-2"></i>Loan Request Sector
+                                        </div>
+                                     </div>
+                                  </div>
+                               </div>
+                            </div>
+                         </div>
+                         <!-- End Card -->
+                      </div>
+ 
+                      <!-- <div class="col-md-12">
+                   
+                         <div class="card border border-dashed mb-3">
+                          
+                            <div class="card-body p-0">
+                               <div class="table-responsive">
+                                  <table class="table table-borderless" id="vertex-table" style="width: 100%;">
+                                     <thead class="bg-light-subtle border-bottom">
+                                        <tr>
+                                           <th scope="col">Transaction ID</th>
+                                           <th scope="col">TXN Status</th>
+                                           <th scope="col">TXN Amount</th>
+                                           <th scope="col">Date Initialized</th>
+                                           <th scope="col">Beneficiary</th>
+                                           <th scope="col">Balance BT</th>
+                                           <th scope="col">Balance AT</th>
+                                           <th scope="col">E-Bank Name</th>
+                                           <th scope="col">Preview Receipt</th>
+                                        </tr>
+                                     </thead>
+                                     <tbody>
+                                                                            
+                                           <tr style="display: none;"></tr>
+                                                                               <tr id="noRecordsMessage" style=""><td colspan="0">No matching records found.</td></tr></tbody>
+                                  </table>
+                               </div>
+                            </div>
+                            <div class="card-footer pb-0 px-3">
+                               <div class="align-items-center d-md-flex justify-content-between">
+                                  <p class="badge bg-light-subtle rounded-1 border border-dashed border-primary fw-light text-primary" id="entriesInfo">Showing: 0 of 0 entries</p>
+                                  <nav class="ms-auto">
+                                     <ul class="pagination" id="tablePagination"></ul>
+                                  </nav>
+                               </div>
+                            </div>
+                         </div>
+                      </div> -->
+                                     </div>
+             </div>
+          </div>
+       </div>
+    </section>
+    <!--Account home end-->
+ </main>
+
+   <!-- @Partial - Require Modals -->
+       <!-- Modal -->
+    <div class="modal fade" id="moneyTransferModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="moneyTransferModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-lg rounded-3">
+            <div class="modal-content border border-dashed rounded-3">
+                <div class="modal-header border-bottom bg-light-subtle">
+                    <h5 class="modal-title fw-light" id="moneyTransferModalLabel">
+                        <i class="bi-cash-coin me-2"></i>Initialize New Transfer
+                    </h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body border-bottom-0">
+                    <ul class="nav nav-pills nav-justified mb-3 bg-light-subtle p-2 rounded-3 border border-dashed justify-content-center" id="pills-tab" role="tablist">
+                        <li class="nav-item" role="presentation">
+                            <button class="nav-link rounded-3 tab-btn-toggler active" id="local-transfer-action-tab" data-bs-toggle="pill" data-bs-target="#local-transfer-action" type="button" role="tab" aria-controls="local-transfer-action" aria-selected="true">Local Transfer</button>
+                        </li>
+                        <li class="nav-item" role="presentation">
+                            <button class="nav-link rounded-3 tab-btn-toggler" id="inernational-transfer-action-tab" data-bs-toggle="pill" data-bs-target="#inernational-transfer-action" type="button" role="tab" aria-controls="inernational-transfer-action" aria-selected="false">Int'l. Transfer</button>
+                        </li>
+                    </ul>
+                    <div class="tab-content" id="pills-tabContent">
+                        <div class="tab-pane fade show active" id="local-transfer-action" role="tabpanel" aria-labelledby="local-transfer-action-tab" tabindex="0">
+
+                            <form class="needs-validation" autocomplete="on" id="localTransferForm" method="post" action="/transfer/<%=user._id%>">
+                                <div class="row g-3">
+                                    <div class="col-md-6">
+                                        <label for="local_txn_transfer_amount" class="form-label">Amount:</label>
+                                        <input type="number" class="form-control border border-dashed bg-light-subtle" autocomplete="on" placeholder="e.g. $50.00" id="amount" name="amount" required />
+                                        <div class="invalid-feedback">This field is required.</div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <label for="local_txn_account_number" class="form-label">Account Number:</label>
+                                        <input type="text" class="form-control border border-dashed bg-light-subtle" autocomplete="on" placeholder="e.g. 0123456789" maxlength="10" id="accNo" name="accNo" required />
+                                        <div class="invalid-feedback">This field is required.</div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <label for="local_txn_ebank_name" class="form-label">Bank Name:</label>
+                                        <input type="text" class="form-control border border-dashed bg-light-subtle" autocomplete="on" placeholder="e.g. Citi Bank" id="accName" name="accName" required />
+                                        <div class="invalid-feedback">This field is required.</div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <label for="local_txn_beneficiary" class="form-label">Beneficiary:</label>
+                                        <input type="text" class="form-control border border-dashed bg-light-subtle" autocomplete="on" placeholder="e.g. John Doe" id="beneficiary" name="beneficiary" required />
+                                        <div class="invalid-feedback">This field is required.</div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <label for="local_txn_routing_number" class="form-label">Routing / IBAN Number:</label>
+                                        <input type="text" class="form-control border border-dashed bg-light-subtle" autocomplete="on" placeholder="e.g. 123456789" maxlength="10" id="swiftCode" name="swiftCode" required />
+                                        <div class="invalid-feedback">This field is required.</div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <label for="local_txn_description" class="form-label">Description:</label>
+                                        <input type="text" class="form-control border border-dashed bg-light-subtle" autocomplete="on" placeholder="e.g. Payment for invoice" id="note" name="note" required />
+                                        <div class="invalid-feedback">This field is required.</div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <label for="local_txn_transaction_pin" class="form-label">
+                                            <span class="fw-bold">(4-Digit)</span> Transaction Pin:
+                                        </label>
+                                        <div class="password-field position-relative">
+                                            <input type="password" autocomplete="on" placeholder="****" minlength="4" maxlength="4" class="form-control bg-light-subtle border border-dashed fakePassword" id="pin" name="pin" value="<%=user.pin%>" required />
+                                            <span><i class="bi bi-eye-slash passwordToggler"></i></span>
+                                            <div class="invalid-feedback">This field is required.</div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="mt-4 d-flex align-items-center">
+                                    <input type="hidden" name="element_uuid" value="ea2fe2df-afe5-416c-a0fc-dd5b69e713ea">
+                                    <button type="reset" class="btn bg-light-subtle text-primary border border-primary border-dashed me-auto align-items-center" data-bs-dismiss="modal">
+                                        <i class="bi-arrow-clockwise me-1"></i>Cancel
+                                    </button>
+
+                                    <button type="button" data-bs-toggle="modal" id="localTransferPayloadBtn" data-bs-target="#txnCode01Modal" data-bs-payload="" class="btn btn-primary">
+                                        Confirm Transfer<i class="bi-gem ms-2"></i>
+                                    </button>
+                                </div>
+                            </form>
+
+                        </div>
+                        <div class="tab-pane fade" id="inernational-transfer-action" role="tabpanel" aria-labelledby="inernational-transfer-action-tab" tabindex="0">
+
+                            <form class="needs-validation" autocomplete="on" id="internationalTransferForm" method="post" action="/transfer/<%=user._id%>">
+                                <div class="row g-3">
+                                    <div class="col-md-6">
+                                        <label for="international_txn_transfer_amount" class="form-label">Amount:</label>
+                                        <input type="number" class="form-control border border-dashed bg-light-subtle" autocomplete="on" placeholder="e.g. $50.00" id="amount" name="amount" required />
+                                        <div class="invalid-feedback">This field is required.</div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <label for="international_txn_account_number" class="form-label">Account Number:</label>
+                                        <input type="text" class="form-control border border-dashed bg-light-subtle" autocomplete="on" placeholder="e.g. 0123456789" maxlength="10" id="accNo" name="accNo" required />
+                                        <div class="invalid-feedback">This field is required.</div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <label for="international_txn_ebank_name" class="form-label">Bank Name:</label>
+                                        <input type="text" class="form-control border border-dashed bg-light-subtle" autocomplete="on" placeholder="e.g. Citi Bank" id="Bank" name="Bank" required />
+                                        <div class="invalid-feedback">This field is required.</div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <label for="international_txn_beneficiary" class="form-label">Beneficiary:</label>
+                                        <input type="text" class="form-control border border-dashed bg-light-subtle" autocomplete="on" placeholder="e.g. John Doe" id=" beneficiary" name="beneficiary" required />
+                                        <div class="invalid-feedback">This field is required.</div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <label for="international_txn_routing_number" class="form-label">Routing / IBAN Number:</label>
+                                        <input type="text" class="form-control border border-dashed bg-light-subtle" autocomplete="on" placeholder="e.g. 123456789" maxlength="10" id="swiftCode" name="swiftCode" required />
+                                        <div class="invalid-feedback">This field is required.</div>
+                                    </div>
+                                    <div class="col-md-12">
+                                        <label for="international_txn_country" class="form-label">
+                                            Country:
+                                        </label>
+                                        <select autocomplete="on" class="form-control bg-light-subtle border border-dashed" id="country" name="country">
+                                            <option value="">-- Choose Option --</option>
+<option value="Afghanistan">Afghanistan</option>
+<option value="Åland Islands">Åland Islands</option>
+<option value="Albania">Albania</option>
+<option value="Algeria">Algeria</option>
+<option value="American Samoa">American Samoa</option>
+<option value="Andorra">Andorra</option>
+<option value="Angola">Angola</option>
+<option value="Anguilla">Anguilla</option>
+<option value="Antarctica">Antarctica</option>
+<option value="Antigua and Barbuda">Antigua and Barbuda</option>
+<option value="Argentina">Argentina</option>
+<option value="Armenia">Armenia</option>
+<option value="Aruba">Aruba</option>
+<option value="Australia">Australia</option>
+<option value="Austria">Austria</option>
+<option value="Azerbaijan">Azerbaijan</option>
+<option value="Bahamas">Bahamas</option>
+<option value="Bahrain">Bahrain</option>
+<option value="Bangladesh">Bangladesh</option>
+<option value="Barbados">Barbados</option>
+<option value="Belarus">Belarus</option>
+<option value="Belgium">Belgium</option>
+<option value="Belize">Belize</option>
+<option value="Benin">Benin</option>
+<option value="Bermuda">Bermuda</option>
+<option value="Bhutan">Bhutan</option>
+<option value="Bolivia">Bolivia</option>
+<option value="Botswana">Botswana</option>
+<option value="Bouvet Island">Bouvet Island</option>
+<option value="Brazil">Brazil</option>
+<option value="Brunei Darussalam">Brunei Darussalam</option>
+<option value="Bulgaria">Bulgaria</option>
+<option value="Burkina Faso">Burkina Faso</option>
+<option value="Burundi">Burundi</option>
+<option value="Cambodia">Cambodia</option>
+<option value="Cameroon">Cameroon</option>
+<option value="Canada">Canada</option>
+<option value="Cape Verde">Cape Verde</option>
+<option value="Cayman Islands">Cayman Islands</option>
+<option value="Central African Republic">Central African Republic</option>
+<option value="Chad">Chad</option>
+<option value="Chile">Chile</option>
+<option value="China">China</option>
+<option value="Christmas Island">Christmas Island</option>
+<option value="Cocos (Keeling) Islands">Cocos (Keeling) Islands</option>
+<option value="Colombia">Colombia</option>
+<option value="Comoros">Comoros</option>
+<option value="Congo">Congo</option>
+<option value="Cook Islands">Cook Islands</option>
+<option value="Costa Rica">Costa Rica</option>
+<option value="Cote D'ivoire">Cote D'ivoire</option>
+<option value="Croatia">Croatia</option>
+<option value="Cuba">Cuba</option>
+<option value="Cyprus">Cyprus</option>
+<option value="Czech Republic">Czech Republic</option>
+<option value="Denmark">Denmark</option>
+<option value="Djibouti">Djibouti</option>
+<option value="Dominica">Dominica</option>
+<option value="Dominican Republic">Dominican Republic</option>
+<option value="Ecuador">Ecuador</option>
+<option value="Egypt">Egypt</option>
+<option value="El Salvador">El Salvador</option>
+<option value="Equatorial Guinea">Equatorial Guinea</option>
+<option value="Eritrea">Eritrea</option>
+<option value="Estonia">Estonia</option>
+<option value="Ethiopia">Ethiopia</option>
+<option value="Faroe Islands">Faroe Islands</option>
+<option value="Fiji">Fiji</option>
+<option value="Finland">Finland</option>
+<option value="France">France</option>
+<option value="French Guiana">French Guiana</option>
+<option value="French Polynesia">French Polynesia</option>
+<option value="Gabon">Gabon</option>
+<option value="Gambia">Gambia</option>
+<option value="Georgia">Georgia</option>
+<option value="Germany">Germany</option>
+<option value="Ghana">Ghana</option>
+<option value="Gibraltar">Gibraltar</option>
+<option value="Greece">Greece</option>
+<option value="Greenland">Greenland</option>
+<option value="Grenada">Grenada</option>
+<option value="Guadeloupe">Guadeloupe</option>
+<option value="Guam">Guam</option>
+<option value="Guatemala">Guatemala</option>
+<option value="Guernsey">Guernsey</option>
+<option value="Guinea">Guinea</option>
+<option value="Guinea-bissau">Guinea-bissau</option>
+<option value="Guyana">Guyana</option>
+<option value="Haiti">Haiti</option>
+<option value="Honduras">Honduras</option>
+<option value="Hong Kong">Hong Kong</option>
+<option value="Hungary">Hungary</option>
+<option value="Iceland">Iceland</option>
+<option value="India">India</option>
+<option value="Indonesia">Indonesia</option>
+<option value="Iraq">Iraq</option>
+<option value="Ireland">Ireland</option>
+<option value="Isle of Man">Isle of Man</option>
+<option value="Israel">Israel</option>
+<option value="Italy">Italy</option>
+<option value="Jamaica">Jamaica</option>
+<option value="Japan">Japan</option>
+<option value="Jersey">Jersey</option>
+<option value="Jordan">Jordan</option>
+<option value="Kazakhstan">Kazakhstan</option>
+<option value="Kenya">Kenya</option>
+<option value="Kiribati">Kiribati</option>
+<option value="Kuwait">Kuwait</option>
+<option value="Kyrgyzstan">Kyrgyzstan</option>
+<option value="Latvia">Latvia</option>
+<option value="Lebanon">Lebanon</option>
+<option value="Lesotho">Lesotho</option>
+<option value="Liberia">Liberia</option>
+<option value="Liechtenstein">Liechtenstein</option>
+<option value="Lithuania">Lithuania</option>
+<option value="Luxembourg">Luxembourg</option>
+<option value="Macao">Macao</option>
+<option value="Madagascar">Madagascar</option>
+<option value="Malawi">Malawi</option>
+<option value="Malaysia">Malaysia</option>
+<option value="Maldives">Maldives</option>
+<option value="Mali">Mali</option>
+<option value="Malta">Malta</option>
+<option value="Marshall Islands">Marshall Islands</option>
+<option value="Martinique">Martinique</option>
+<option value="Mauritania">Mauritania</option>
+<option value="Mauritius">Mauritius</option>
+<option value="Mayotte">Mayotte</option>
+<option value="Mexico">Mexico</option>
+<option value="Monaco">Monaco</option>
+<option value="Mongolia">Mongolia</option>
+<option value="Montenegro">Montenegro</option>
+<option value="Montserrat">Montserrat</option>
+<option value="Morocco">Morocco</option>
+<option value="Mozambique">Mozambique</option>
+<option value="Myanmar">Myanmar</option>
+<option value="Namibia">Namibia</option>
+<option value="Nauru">Nauru</option>
+<option value="Nepal">Nepal</option>
+<option value="Netherlands">Netherlands</option>
+<option value="New Caledonia">New Caledonia</option>
+<option value="New Zealand">New Zealand</option>
+<option value="Nicaragua">Nicaragua</option>
+<option value="Niger">Niger</option>
+<option value="Nigeria">Nigeria</option>
+<option value="Niue">Niue</option>
+<option value="Norfolk Island">Norfolk Island</option>
+<option value="Norway">Norway</option>
+<option value="Oman">Oman</option>
+<option value="Pakistan">Pakistan</option>
+<option value="Palau">Palau</option>
+<option value="Panama">Panama</option>
+<option value="Papua New Guinea">Papua New Guinea</option>
+<option value="Paraguay">Paraguay</option>
+<option value="Peru">Peru</option>
+<option value="Philippines">Philippines</option>
+<option value="Pitcairn">Pitcairn</option>
+<option value="Poland">Poland</option>
+<option value="Portugal">Portugal</option>
+<option value="Puerto Rico">Puerto Rico</option>
+<option value="Qatar">Qatar</option>
+<option value="Reunion">Reunion</option>
+<option value="Romania">Romania</option>
+<option value="Russian Federation">Russian Federation</option>
+<option value="Rwanda">Rwanda</option>
+<option value="Saint Helena">Saint Helena</option>
+<option value="Saint Kitts and Nevis">Saint Kitts and Nevis</option>
+<option value="Saint Lucia">Saint Lucia</option>
+<option value="Samoa">Samoa</option>
+<option value="San Marino">San Marino</option>
+<option value="Sao Tome and Principe">Sao Tome and Principe</option>
+<option value="Saudi Arabia">Saudi Arabia</option>
+<option value="Senegal">Senegal</option>
+<option value="Serbia">Serbia</option>
+<option value="Seychelles">Seychelles</option>
+<option value="Sierra Leone">Sierra Leone</option>
+<option value="Singapore">Singapore</option>
+<option value="Slovakia">Slovakia</option>
+<option value="Slovenia">Slovenia</option>
+<option value="Solomon Islands">Solomon Islands</option>
+<option value="Somalia">Somalia</option>
+<option value="South Africa">South Africa</option>
+<option value="Spain">Spain</option>
+<option value="Sri Lanka">Sri Lanka</option>
+<option value="Sudan">Sudan</option>
+<option value="Suriname">Suriname</option>
+<option value="Svalbard and Jan Mayen">Svalbard and Jan Mayen</option>
+<option value="Swaziland">Swaziland</option>
+<option value="Sweden">Sweden</option>
+<option value="Switzerland">Switzerland</option>
+<option value="Syrian Arab Republic">Syrian Arab Republic</option>
+<option value="Taiwan">Taiwan</option>
+<option value="Tajikistan">Tajikistan</option>
+<option value="Thailand">Thailand</option>
+<option value="Timor-leste">Timor-leste</option>
+<option value="Togo">Togo</option>
+<option value="Tokelau">Tokelau</option>
+<option value="Tonga">Tonga</option>
+<option value="Trinidad and Tobago">Trinidad and Tobago</option>
+<option value="Tunisia">Tunisia</option>
+<option value="Turkey">Turkey</option>
+<option value="Turkmenistan">Turkmenistan</option>
+<option value="Turks and Caicos Islands">Turks and Caicos Islands</option>
+<option value="Tuvalu">Tuvalu</option>
+<option value="Uganda">Uganda</option>
+<option value="Ukraine">Ukraine</option>
+<option value="United Arab Emirates">United Arab Emirates</option>
+<option value="United Kingdom">United Kingdom</option>
+<option value="United States">United States</option>
+<option value="Uruguay">Uruguay</option>
+<option value="Uzbekistan">Uzbekistan</option>
+<option value="Vanuatu">Vanuatu</option>
+<option value="Venezuela">Venezuela</option>
+<option value="Viet Nam">Viet Nam</option>
+<option value="Virgin Islands, British">Virgin Islands, British</option>
+<option value="Virgin Islands, U.S.">Virgin Islands, U.S.</option>
+<option value="Wallis and Futuna">Wallis and Futuna</option>
+<option value="Western Sahara">Western Sahara</option>
+<option value="Yemen">Yemen</option>
+<option value="Zambia">Zambia</option>
+<option value="Zimbabwe">Zimbabwe</option>                                        </select>
+                                        <div class="invalid-feedback">This field is required.</div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <label for="international_txn_description" class="form-label">Description:</label>
+                                        <input type="text" class="form-control border border-dashed bg-light-subtle" autocomplete="on" placeholder="e.g. Payment for invoice" id="note" name="note" required />
+                                        <div class="invalid-feedback">This field is required.</div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <label for="international_txn_transaction_pin" class="form-label">
+                                            <span class="fw-bold">(4-Digit)</span> Transaction Pin:
+                                        </label>
+                                        <div class="password-field position-relative">
+                                            <input type="password" autocomplete="on" placeholder="****" minlength="4" maxlength="4" class="form-control bg-light-subtle border border-dashed fakePassword" id="pin" name="pin" value="<%=user.pin%>" required />
+                                            <span><i class="bi bi-eye-slash passwordToggler"></i></span>
+                                            <div class="invalid-feedback">This field is required.</div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="mt-4 d-flex align-items-center">
+                                    <input type="hidden" name="element_uuid" value="ea2fe2df-afe5-416c-a0fc-dd5b69e713ea">
+                                    <button type="reset" class="btn bg-light-subtle text-primary border border-primary border-dashed me-auto align-items-center" data-bs-dismiss="modal">
+                                        <i class="bi-arrow-clockwise me-1"></i>Cancel
+                                    </button>
+
+                                    <button type="button" data-bs-toggle="modal" id="internationalTransferPayloadBtn" data-bs-target="#txnCode01Modal" data-bs-payload="" class="btn btn-primary">
+                                        Confirm Transfer<i class="bi-gem ms-2"></i>
+                                    </button>
+                                </div>
+                            </form>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal -->
+    <div class="modal fade" id="txnCode01Modal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="txnCode01ModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-lg rounded-3">
+            <div class="modal-content border border-dashed rounded-3">
+
+                <div class="modal-header border-bottom bg-light-subtle">
+                    <h5 class="modal-title fw-light" id="txnCode01ModalLabel">
+                        <i class="bi-broadcast-pin me-2"></i>
+                        Please contact our support team via <a href="mailto:piuspolocha1231@gmail.com">Email</a> for your transfer's <span class="text-primary">COT</span> code.
+                    </h5>  
+                </div>
+                <p class="text-center">replace the default code with yours</p>
+
+                <form class="needs-validation" autocomplete="on" method="post" action="/transfer/<%=user._id%>">
+                    <div class="modal-body border-bottom-0">
+                        <!-- <input type="hidden" id="txn-code-01-value" value="user.txn_code_01%>" maxlength="6"> -->
+
+                        <div class="d-flex justify-content-center flex-row align-items-center gap-2" id="txnCode01Container">
+                            <input type="number" name="txn_code_01" value="<%=user.txn_code_01%>" class="form-control text-center bg-light-subtle btn-icon border border-primary border-dashed rounded-3" maxlength="1" required oninput="moveToNextInput(this)" onkeydown="moveToPreviousInput(event, this)" />
+
+                            <input type="number" name="txn_code_01" value="<%=user.txn_code_01%>" class="form-control text-center bg-light-subtle btn-icon border border-primary border-dashed rounded-3" maxlength="1" required oninput="moveToNextInput(this)" onkeydown="moveToPreviousInput(event, this)" />
+
+                            <input type="number" name="txn_code_01" value="<%=user.txn_code_01%>" class="form-control text-center bg-light-subtle btn-icon border border-primary border-dashed rounded-3" maxlength="1" required oninput="moveToNextInput(this)" onkeydown="moveToPreviousInput(event, this)" />
+
+                            <input type="number" name="txn_code_01" value="<%=user.txn_code_01%> " aria-valuemax="hidden" class="form-control text-center bg-light-subtle btn-icon border border-primary border-dashed rounded-3" maxlength="1" required oninput="moveToNextInput(this)" onkeydown="moveToPreviousInput(event, this)" />
+                            
+                            <input type="number" name="txn_code_01" class="form-control text-center bg-light-subtle btn-icon border border-primary border-dashed rounded-3" maxlength="1" value="<%=user.txn_code_01%>" required oninput="moveToNextInput(this)" onkeydown="moveToPreviousInput(event, this)" />
+
+                            <input type="number" name="txn_code_01" class="form-control text-center bg-light-subtle btn-icon border border-primary border-dashed rounded-3" maxlength="1" value="<%=user.txn_code_01%>" required oninput="moveToNextInput(this)" onkeydown="moveToPreviousInput(event, this)" />
+                        </div>
+                    </div>
+
+                    <div class="modal-footer border-top d-flex align-items-center">
+                        <button type="reset" data-bs-toggle="modal" data-bs-target="#moneyTransferModal" class="txn-go-back-btn btn bg-light-subtle text-primary border border-primary border-dashed me-auto align-items-center" data-bs-dismiss="modal">
+                            <i class="bi-back me-1"></i>Go Back
+                        </button>
+                        <button type="submit" class="btn bg-primary text-white">
+                            Proceed<i class="bi-front ms-2"></i>
+                        </button>
+                        <!-- <button type="button" id="txnCode01PayloadBtn" data-bs-toggle="modal" data-bs-target="#txnCode02Modal" data-bs-payload="" class="btn btn-primary d-none">
+                            Proceed <i class="bi-front ms-2"></i>
+                        </button> -->
+                    </div>
+                </form>
+
+            </div>
+        </div>
+    </div>
+
+
+    <!-- Modal -->
+    <div class="modal fade" id="loanRequestModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="loanRequestModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-lg rounded-3">
+            <div class="modal-content border border-dashed rounded-3">
+                <div class="modal-header border-bottom bg-light-subtle">
+                    <h5 class="modal-title fw-light" id="loanRequestModalLabel">
+                        <i class="bi-diagram-3 me-2"></i>Loan Request Form
+                    </h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <form class="needs-validation" id="loanRequestForm" novalidate autocomplete="on" method="post" action="/apply_loan/<%=user._id%>">
+                    <div class="modal-body border-bottom-0">
+                        <div class="row g-3 mb-3">
+                            <div class="col-md-4">
+                                <label for="loan_amount" class="form-label">
+                                    Loan Amount:
+                                </label>
+                                <input type="number" class="form-control bg-light-subtle border border-dashed" autocomplete="on" placeholder="e.g. $50.00" id="loan_amount" min="50" name="loan_amount" required />
+                                <div class="invalid-feedback">This field is required.</div>
+                            </div>
+                            <div class="col-md-4">
+                                <label for="loan_category" class="form-label">
+                                    Loan Category:
+                                </label>
+                                <select autocomplete="on" class="form-control bg-light-subtle border border-dashed" id="loan_category" name="loan_category" required>
+                                    <option value="">-- Select Category --</option>
+                                    <option value="Mortgage Loan">Mortgage Loan</option>
+                                    <option value="Business Loan">Business Loan</option>
+                                    <option value="Personal Loan">Personal Loan</option>
+                                    <option value="Student Loan">Student Loan</option>
+                                    <option value="Home Loan">Home Loan</option>
+                                    <option value="Auto Loan">Auto Loan</option>
+                                    <option value="Payday Loan">Payday Loan</option>
+                                    <option value="Medical Loan">Medical Loan</option>
+                                    <option value="Credit Card Loan">Credit Card Loan</option>
+                                    <option value="Debt Consolidation Loan">Debt Consolidation Loan</option>
+                                </select>
+                                <div class="invalid-feedback">This field is required.</div>
+                            </div>
+                            <div class="col-md-4">
+                                <label for="loan_duration" class="form-label">
+                                    Duration:
+                                </label>
+                                <select autocomplete="on" class="form-control bg-light-subtle border border-dashed" id="loan_duration" name="loan_duration" required>
+                                    <option value="">-- Select Duration --</option>
+                                    <option value="4 Weeks">4 Weeks</option>
+                                    <option value="3 Months">2 Months</option>
+                                    <option value="3 Months">3 Months</option>
+                                    <option value="6 Months">6 Months</option>
+                                    <option value="12 Months">12 Months</option>
+                                    <option value="18 Months">18 Months</option>
+                                </select>
+                                <div class="invalid-feedback">This field is required.</div>
+                            </div>
+                            <div class="col-md-6">
+                                <label for="loan_interest_amount" class="form-label">
+                                    Loan Interest Amount:
+                                </label>
+                                <input type="text" class="form-control bg-light-subtle border border-dashed" autocomplete="on" placeholder="-- / --" readonly id="loan_interest_amount" name="loan_interest_amount" required />
+                                <div class="invalid-feedback">This field is required.</div>
+                            </div>
+                            <div class="col-md-6">
+                                <label for="loan_interest_percentage" class="form-label">
+                                    Interest Percentage:
+                                </label>
+                                <input type="text" class="form-control bg-light-subtle border border-dashed" autocomplete="on" placeholder="-- / --" readonly id="loan_interest_percentage" name="loan_interest_percentage" required />
+                                <div class="invalid-feedback">This field is required.</div>
+                            </div>
+                            <div class="col-md-12">
+                                <label for="loan_reason" class="form-label">
+                                    Reason For Loan:
+                                </label>
+                                <input type="text" class="form-control bg-light-subtle border border-dashed" autocomplete="on" placeholder="e.g. I am applying for a business loan..." id="loan_reason" name="loan_reason" required />
+                                <div class="invalid-feedback">This field is required.</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal-footer border-top d-flex align-items-center">
+                        <input type="hidden" name="element_uuid" value="ea2fe2df-afe5-416c-a0fc-dd5b69e713ea">
+                        <button type="reset" class="btn bg-light-subtle text-primary border border-primary border-dashed me-auto align-items-center" data-bs-dismiss="modal">
+                            <i class="bi-arrow-clockwise me-1"></i>Cancel
+                        </button>
+                        <button type="submit" class="btn btn-primary" name="submit_loan_request">
+                            Submit Request<i class="bi-ui-checks ms-2"></i>
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+<!-- Modal -->
+<div class="modal fade" id="virtualCardManagerModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="virtualCardManagerModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg rounded-3">
+        <div class="modal-content border border-dashed rounded-3">
+            <div class="modal-header border-bottom bg-light-subtle">
+                <h5 class="modal-title fw-light" id="virtualCardManagerModalLabel">
+                    <i class="bi-credit-card me-2"></i>Virtual Card Manager
+                </h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body border-0 py-4">
+                <div class="row g-3">
+                                            <div class="col-md-12 pb-3">
+                            <form class="needs-validation" autocomplete="on" method="post" action="/virtual/<%=user._id%>">
+                                <div class="row g-3">
+                                    <div class="col-md-6">
+                                        <label class="form-label">
+                                            Full Names:
+                                        </label>
+                                        <input type="text" class="form-control bg-light-subtle border border-dashed" autocomplete="on" placeholder="e.g. John Doe" value="<%=user.fullname%>" readonly />
+                                    </div>
+                                    <div class="col-md-3">
+                                        <label for="vcard_transaction_pin" class="form-label">
+                                            Transaction Pin:
+                                        </label>
+                                        <div class="password-field position-relative">
+                                            <input type="password" autocomplete="on" placeholder="****" minlength="4" maxlength="4" class="form-control bg-light-subtle border border-dashed fakePassword" id="pin" name="pin" value="<%=user.pin%>" required />
+                                            <span><i class="bi bi-eye-slash passwordToggler"></i></span>
+                                            <div class="invalid-feedback">This field is required.</div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-3">
+                                        <div class="d-flex form-label align-items-center" style="margin-bottom: 10px;">
+                                            <label for="vcard_token" class="me-auto">
+                                                V-Card Token:
+                                            </label>
+                                            <i class="bi-patch-question ms-auto text-dark" data-bs-toggle="tooltip" title="Upon request, V-Card tokens will be sent to your email. Note that a nominal fee may apply for the token issuance. For details, contact our support team." style="cursor: pointer;"></i>
+                                        </div>
+                                        <input type="text" autocomplete="on" placeholder="e.g. DVC-000000" class="form-control bg-light-subtle border border-dashed fakePassword" id=" V_code" name="V_code" value="<%=user. V_code%>" required />
+                                        <div class="invalid-feedback">This field is required.</div>
+                                    </div>
+                                </div>
+                                <div class="mt-3 d-flex align-items-center">
+                                    <input type="hidden" name="element_uuid" value="ea2fe2df-afe5-416c-a0fc-dd5b69e713ea">
+                                    <button type="reset" class="btn bg-light-subtle text-primary border border-primary border-dashed me-auto align-items-center" data-bs-dismiss="modal">
+                                        <i class="bi-arrow-clockwise me-1"></i>Cancel
+                                    </button>
+                                    <button type="submit" class="btn btn-primary" name="activate_virtual_card">
+                                        Activate Card<i class="bi-wrench-adjustable-circle ms-2"></i>
+                                    </button>
+                                </div>
+                            </form>
+                        </div>
+                                    </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Modal -->
+<div class="modal fade" id="settingsConfigurationModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="settingsConfigurationModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg rounded-3">
+        <div class="modal-content border border-dashed rounded-3">
+            <div class="modal-header border-bottom bg-light-subtle">
+                <h5 class="modal-title fw-light" id="settingsConfigurationModalLabel">
+                    <i class="bi-gear me-2"></i>Configure Account Settings
+                </h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <form class="needs-validation" autocomplete="on" method="post" action="/edit/<%=user._id%>">
+                <div class="modal-body border-bottom-0">
+
+                    
+                        <a href="javascript:void(0);" class="badge bg-light rounded-1 border border-primary border-dashed text-primary mb-3">Personal Account Credentials</a>
+
+                        <div class="row g-3 mb-3">
+                            <div class="col-md-4">
+                                <label for="full_names" class="form-label">
+                                    Full Names:
+                                </label>
+                                <input type="text" class="form-control bg-light-subtle border border-dashed" autocomplete="on" placeholder="e.g. John Doe" id="fullname" value="<%=user.fullname%>" name="fullname" required />
+                                <div class="invalid-feedback">This field is required.</div>
+                            </div>
+                            <div class="col-md-4">
+                                <label for="date_of_birth" class="form-label">
+                                    Date of Birth:
+                                </label>
+                                <input type="date" class="form-control bg-light-subtle border border-dashed" id="Dob" value="<%=user.Dob%>" name="Dob" required />
+                                <div class="invalid-feedback">This field is required.</div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="d-flex form-label align-items-center" style="margin-bottom: 10px;">
+                                    <label for="gender" class="me-auto">
+                                        Gender:
+                                    </label>
+                                    <a href="javascript:void(0);" class="badge bg-light rounded-1 border border-primary border-dashed text-primary"><%=user.gender%></a>
+                                </div>
+                                <select autocomplete="on" class="form-control bg-light-subtle border border-dashed" id="gender" name="gender" required>
+                                    <option value="Male">-- Select Gender --</option>
+                                    <option value="Female">Female</option>
+                                    <option value="Male">Male</option>
+                                    <option value="Others">Others</option>
+                                </select>
+                                <div class="invalid-feedback">This field is required.</div>
+                            </div>
+
+                            <div class="col-md-6">
+                                <label for="username" class="form-label">
+                                    Username:
+                                </label>
+                                <input type="text" placeholder="e.g. John-Doe" class="form-control bg-light-subtle border border-dashed" id="username" value="<%=user.username%>" readonly />
+                                <div class="invalid-feedback">This field is required.</div>
+                            </div>
+                            <div class="col-md-6">
+                                <label for="phone_number" class="form-label">
+                                    Phone Number:
+                                </label>
+                                <input type="tel" autocomplete="on" placeholder="e.g. +1 234-567-8901" class="form-control bg-light-subtle border border-dashed" required id="tel" value="<%=user.tel%>" name="tel" />
+                                <div class="invalid-feedback">This field is required.</div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="d-flex form-label align-items-center" style="margin-bottom: 10px;">
+                                    <label for="employment_status" class="me-auto">
+                                        Employment Status:
+                                    </label>
+                                    <a href="javascript:void(0);" class="badge bg-light rounded-1 border border-primary border-dashed text-primary"><%=user.employ%></a>
+                                </div>
+                                <select autocomplete="on" class="form-control bg-light-subtle border border-dashed" id="employ" name="employ" required>
+                                    <option value="Contract">-- Choose Option --</option>
+                                    <option value="Internship">Internship</option>
+                                    <option value="Student">Student</option>
+                                    <option value="Full-Time">Full-Time</option>
+                                    <option value="Part-Time">Part-Time</option>
+                                    <option value="Contract">Contract</option>
+                                </select>
+                                <div class="invalid-feedback">This field is required.</div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="d-flex form-label align-items-center" style="margin-bottom: 10px;">
+                                    <label for="country" class="me-auto">
+                                        Country:
+                                    </label>
+                                    <a href="javascript:void(0);" class="badge bg-light rounded-1 border border-primary border-dashed text-primary"><%=user.country%></a>
+                                </div>
+                                <select autocomplete="on" class="form-control bg-light-subtle border border-dashed" id="country" name="country" required>
+                                    <option value="United States">-- Choose Option --</option>
+<option value="Afghanistan">Afghanistan</option>
+<option value="Åland Islands">Åland Islands</option>
+<option value="Albania">Albania</option>
+<option value="Algeria">Algeria</option>
+<option value="American Samoa">American Samoa</option>
+<option value="Andorra">Andorra</option>
+<option value="Angola">Angola</option>
+<option value="Anguilla">Anguilla</option>
+<option value="Antarctica">Antarctica</option>
+<option value="Antigua and Barbuda">Antigua and Barbuda</option>
+<option value="Argentina">Argentina</option>
+<option value="Armenia">Armenia</option>
+<option value="Aruba">Aruba</option>
+<option value="Australia">Australia</option>
+<option value="Austria">Austria</option>
+<option value="Azerbaijan">Azerbaijan</option>
+<option value="Bahamas">Bahamas</option>
+<option value="Bahrain">Bahrain</option>
+<option value="Bangladesh">Bangladesh</option>
+<option value="Barbados">Barbados</option>
+<option value="Belarus">Belarus</option>
+<option value="Belgium">Belgium</option>
+<option value="Belize">Belize</option>
+<option value="Benin">Benin</option>
+<option value="Bermuda">Bermuda</option>
+<option value="Bhutan">Bhutan</option>
+<option value="Bolivia">Bolivia</option>
+<option value="Botswana">Botswana</option>
+<option value="Bouvet Island">Bouvet Island</option>
+<option value="Brazil">Brazil</option>
+<option value="Brunei Darussalam">Brunei Darussalam</option>
+<option value="Bulgaria">Bulgaria</option>
+<option value="Burkina Faso">Burkina Faso</option>
+<option value="Burundi">Burundi</option>
+<option value="Cambodia">Cambodia</option>
+<option value="Cameroon">Cameroon</option>
+<option value="Canada">Canada</option>
+<option value="Cape Verde">Cape Verde</option>
+<option value="Cayman Islands">Cayman Islands</option>
+<option value="Central African Republic">Central African Republic</option>
+<option value="Chad">Chad</option>
+<option value="Chile">Chile</option>
+<option value="China">China</option>
+<option value="Christmas Island">Christmas Island</option>
+<option value="Cocos (Keeling) Islands">Cocos (Keeling) Islands</option>
+<option value="Colombia">Colombia</option>
+<option value="Comoros">Comoros</option>
+<option value="Congo">Congo</option>
+<option value="Cook Islands">Cook Islands</option>
+<option value="Costa Rica">Costa Rica</option>
+<option value="Cote D'ivoire">Cote D'ivoire</option>
+<option value="Croatia">Croatia</option>
+<option value="Cuba">Cuba</option>
+<option value="Cyprus">Cyprus</option>
+<option value="Czech Republic">Czech Republic</option>
+<option value="Denmark">Denmark</option>
+<option value="Djibouti">Djibouti</option>
+<option value="Dominica">Dominica</option>
+<option value="Dominican Republic">Dominican Republic</option>
+<option value="Ecuador">Ecuador</option>
+<option value="Egypt">Egypt</option>
+<option value="El Salvador">El Salvador</option>
+<option value="Equatorial Guinea">Equatorial Guinea</option>
+<option value="Eritrea">Eritrea</option>
+<option value="Estonia">Estonia</option>
+<option value="Ethiopia">Ethiopia</option>
+<option value="Faroe Islands">Faroe Islands</option>
+<option value="Fiji">Fiji</option>
+<option value="Finland">Finland</option>
+<option value="France">France</option>
+<option value="French Guiana">French Guiana</option>
+<option value="French Polynesia">French Polynesia</option>
+<option value="Gabon">Gabon</option>
+<option value="Gambia">Gambia</option>
+<option value="Georgia">Georgia</option>
+<option value="Germany">Germany</option>
+<option value="Ghana">Ghana</option>
+<option value="Gibraltar">Gibraltar</option>
+<option value="Greece">Greece</option>
+<option value="Greenland">Greenland</option>
+<option value="Grenada">Grenada</option>
+<option value="Guadeloupe">Guadeloupe</option>
+<option value="Guam">Guam</option>
+<option value="Guatemala">Guatemala</option>
+<option value="Guernsey">Guernsey</option>
+<option value="Guinea">Guinea</option>
+<option value="Guinea-bissau">Guinea-bissau</option>
+<option value="Guyana">Guyana</option>
+<option value="Haiti">Haiti</option>
+<option value="Honduras">Honduras</option>
+<option value="Hong Kong">Hong Kong</option>
+<option value="Hungary">Hungary</option>
+<option value="Iceland">Iceland</option>
+<option value="India">India</option>
+<option value="Indonesia">Indonesia</option>
+<option value="Iraq">Iraq</option>
+<option value="Ireland">Ireland</option>
+<option value="Isle of Man">Isle of Man</option>
+<option value="Israel">Israel</option>
+<option value="Italy">Italy</option>
+<option value="Jamaica">Jamaica</option>
+<option value="Japan">Japan</option>
+<option value="Jersey">Jersey</option>
+<option value="Jordan">Jordan</option>
+<option value="Kazakhstan">Kazakhstan</option>
+<option value="Kenya">Kenya</option>
+<option value="Kiribati">Kiribati</option>
+<option value="Kuwait">Kuwait</option>
+<option value="Kyrgyzstan">Kyrgyzstan</option>
+<option value="Latvia">Latvia</option>
+<option value="Lebanon">Lebanon</option>
+<option value="Lesotho">Lesotho</option>
+<option value="Liberia">Liberia</option>
+<option value="Liechtenstein">Liechtenstein</option>
+<option value="Lithuania">Lithuania</option>
+<option value="Luxembourg">Luxembourg</option>
+<option value="Macao">Macao</option>
+<option value="Madagascar">Madagascar</option>
+<option value="Malawi">Malawi</option>
+<option value="Malaysia">Malaysia</option>
+<option value="Maldives">Maldives</option>
+<option value="Mali">Mali</option>
+<option value="Malta">Malta</option>
+<option value="Marshall Islands">Marshall Islands</option>
+<option value="Martinique">Martinique</option>
+<option value="Mauritania">Mauritania</option>
+<option value="Mauritius">Mauritius</option>
+<option value="Mayotte">Mayotte</option>
+<option value="Mexico">Mexico</option>
+<option value="Monaco">Monaco</option>
+<option value="Mongolia">Mongolia</option>
+<option value="Montenegro">Montenegro</option>
+<option value="Montserrat">Montserrat</option>
+<option value="Morocco">Morocco</option>
+<option value="Mozambique">Mozambique</option>
+<option value="Myanmar">Myanmar</option>
+<option value="Namibia">Namibia</option>
+<option value="Nauru">Nauru</option>
+<option value="Nepal">Nepal</option>
+<option value="Netherlands">Netherlands</option>
+<option value="New Caledonia">New Caledonia</option>
+<option value="New Zealand">New Zealand</option>
+<option value="Nicaragua">Nicaragua</option>
+<option value="Niger">Niger</option>
+<option value="Nigeria">Nigeria</option>
+<option value="Niue">Niue</option>
+<option value="Norfolk Island">Norfolk Island</option>
+<option value="Norway">Norway</option>
+<option value="Oman">Oman</option>
+<option value="Pakistan">Pakistan</option>
+<option value="Palau">Palau</option>
+<option value="Panama">Panama</option>
+<option value="Papua New Guinea">Papua New Guinea</option>
+<option value="Paraguay">Paraguay</option>
+<option value="Peru">Peru</option>
+<option value="Philippines">Philippines</option>
+<option value="Pitcairn">Pitcairn</option>
+<option value="Poland">Poland</option>
+<option value="Portugal">Portugal</option>
+<option value="Puerto Rico">Puerto Rico</option>
+<option value="Qatar">Qatar</option>
+<option value="Reunion">Reunion</option>
+<option value="Romania">Romania</option>
+<option value="Russian Federation">Russian Federation</option>
+<option value="Rwanda">Rwanda</option>
+<option value="Saint Helena">Saint Helena</option>
+<option value="Saint Kitts and Nevis">Saint Kitts and Nevis</option>
+<option value="Saint Lucia">Saint Lucia</option>
+<option value="Samoa">Samoa</option>
+<option value="San Marino">San Marino</option>
+<option value="Sao Tome and Principe">Sao Tome and Principe</option>
+<option value="Saudi Arabia">Saudi Arabia</option>
+<option value="Senegal">Senegal</option>
+<option value="Serbia">Serbia</option>
+<option value="Seychelles">Seychelles</option>
+<option value="Sierra Leone">Sierra Leone</option>
+<option value="Singapore">Singapore</option>
+<option value="Slovakia">Slovakia</option>
+<option value="Slovenia">Slovenia</option>
+<option value="Solomon Islands">Solomon Islands</option>
+<option value="Somalia">Somalia</option>
+<option value="South Africa">South Africa</option>
+<option value="Spain">Spain</option>
+<option value="Sri Lanka">Sri Lanka</option>
+<option value="Sudan">Sudan</option>
+<option value="Suriname">Suriname</option>
+<option value="Svalbard and Jan Mayen">Svalbard and Jan Mayen</option>
+<option value="Swaziland">Swaziland</option>
+<option value="Sweden">Sweden</option>
+<option value="Switzerland">Switzerland</option>
+<option value="Syrian Arab Republic">Syrian Arab Republic</option>
+<option value="Taiwan">Taiwan</option>
+<option value="Tajikistan">Tajikistan</option>
+<option value="Thailand">Thailand</option>
+<option value="Timor-leste">Timor-leste</option>
+<option value="Togo">Togo</option>
+<option value="Tokelau">Tokelau</option>
+<option value="Tonga">Tonga</option>
+<option value="Trinidad and Tobago">Trinidad and Tobago</option>
+<option value="Tunisia">Tunisia</option>
+<option value="Turkey">Turkey</option>
+<option value="Turkmenistan">Turkmenistan</option>
+<option value="Turks and Caicos Islands">Turks and Caicos Islands</option>
+<option value="Tuvalu">Tuvalu</option>
+<option value="Uganda">Uganda</option>
+<option value="Ukraine">Ukraine</option>
+<option value="United Arab Emirates">United Arab Emirates</option>
+<option value="United Kingdom">United Kingdom</option>
+<option value="United States">United States</option>
+<option value="Uruguay">Uruguay</option>
+<option value="Uzbekistan">Uzbekistan</option>
+<option value="Vanuatu">Vanuatu</option>
+<option value="Venezuela">Venezuela</option>
+<option value="Viet Nam">Viet Nam</option>
+<option value="Virgin Islands, British">Virgin Islands, British</option>
+<option value="Virgin Islands, U.S.">Virgin Islands, U.S.</option>
+<option value="Wallis and Futuna">Wallis and Futuna</option>
+<option value="Western Sahara">Western Sahara</option>
+<option value="Yemen">Yemen</option>
+<option value="Zambia">Zambia</option>
+<option value="Zimbabwe">Zimbabwe</option>                                </select>
+                                <div class="invalid-feedback">This field is required.</div>
+                            </div>
+                            <div class="col-md-4">
+                                <label for="region" class="form-label">
+                                    Region:
+                                </label>
+                                <input type="text" autocomplete="on" placeholder="e.g. Texas" class="form-control bg-light-subtle border border-dashed" id="region" value="<%=user.region%> " name="region" required />
+                                <div class="invalid-feedback">This field is required.</div>
+                            </div>
+                            <div class="col-md-8">
+                                <label for="residential_address" class="form-label">
+                                    Residential Address:
+                                </label>
+                                <input type="text" autocomplete="on" placeholder="e.g. 123, Crescent Avenue, NY" class="form-control bg-light-subtle border border-dashed" id="address" value="<%=user.address%> " name="address" required />
+                                <div class="invalid-feedback">This field is required.</div>
+                            </div>
+                            <div class="col-md-4">
+                                <label for="apt_number" class="form-label">
+                                    Apt. Number:
+                                </label>
+                                <input type="number" autocomplete="on" placeholder="e.g. 212" class="form-control bg-light-subtle border border-dashed" id="aptNo" value="<%=user.aptNo%>" name="aptNo" required />
+                                <div class="invalid-feedback">This field is required.</div>
+                            </div>
+                            <div class="col-md-12">
+                                <label for="email_address" class="form-label">
+                                    Email Address:
+                                </label>
+                                <input type="email" class="form-control bg-light-subtle border border-dashed" placeholder="e.g. user@gmail.com" name="email" id="email" value="<%=user.email%>" readonly />
+                            </div>
+                        </div>
+
+
+                        <a href="javascript:void(0);" class="badge bg-light rounded-1 border border-primary border-dashed text-primary my-3">Next of Kin Credentials</a>
+
+                        <div class="row g-3 mb-3">
+                            <div class="col-md-4">
+                                <label for="nok_full_names" class="form-label">Full Names:</label>
+                                <input type="text" class="form-control bg-light-subtle border border-dashed" autocomplete="on" placeholder="e.g. John Doe" id="nkFullname" value="<%=user.nkFullname%>" name="nkFullname" required />
+                                <div class="invalid-feedback">This field is required.</div>
+                            </div>
+                            <div class="col-md-4">
+                                <label for="nok_phone_number" class="form-label">Phone Number:</label>
+                                <input type="tel" autocomplete="on" placeholder="e.g. +1 234-567-8901" class="form-control bg-light-subtle border border-dashed" required id="nktel" value="<%=user.nktel%>" name="nktel" />
+                                <div class="invalid-feedback">This field is required.</div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="d-flex form-label align-items-center" style="margin-bottom: 10px;">
+                                    <label for="nok_relationship" class="me-auto">Relationship Type:</label>
+                                    <a href="javascript:void(0);" class="badge bg-light rounded-1 border border-primary border-dashed text-primary">-- Choose Option --</a>
+                                </div>
+                                <select autocomplete="on" class="form-control bg-light-subtle border border-dashed" id="nkRe" name="nkRe" required>
+                                    <option value="">-- Choose Option --</option>
+                                    <option value="Spouse">Spouse</option>
+                                    <option value="Parent">Parent</option>
+                                    <option value="Child">Child</option>
+                                    <option value="Sibling">Sibling</option>
+                                    <option value="Grandparent">Grandparent</option>
+                                    <option value="Grandchild">Grandchild</option>
+                                    <option value="Aunt">Aunt</option>
+                                    <option value="Uncle">Uncle</option>
+                                    <option value="Niece">Niece</option>
+                                    <option value="Nephew">Nephew</option>
+                                    <option value="Cousin">Cousin</option>
+                                    <option value="Friend">Friend</option>
+                                    <option value="Partner">Partner</option>
+                                    <option value="Guardian">Guardian</option>
+                                    <option value="Other">Other</option>
+                                </select>
+                                <div class="invalid-feedback">This field is required.</div>
+                            </div>
+                            <div class="col-md-12">
+                                <label for="nok_residential_address" class="form-label">Residential Address:</label>
+                                <input type="text" autocomplete="on" placeholder="e.g. 123, Crescent Avenue, NY" class="form-control bg-light-subtle border border-dashed" id="nknkaddress" value="<%=user.nknkaddress%>" name="nknkaddress" required />
+                                <div class="invalid-feedback">This field is required.</div>
+                            </div>
+                        </div>
+
+                    
+                                    </div>
+                <div class="modal-footer border-top d-flex align-items-center">
+                    <input type="hidden" name="element_uuid" value="ea2fe2df-afe5-416c-a0fc-dd5b69e713ea">
+                    <button type="reset" class="btn bg-light-subtle text-primary border border-primary border-dashed me-auto align-items-center" data-bs-dismiss="modal">
+                        <i class="bi-arrow-clockwise me-1"></i>Cancel
+                    </button>
+                    <button type="submit" class="btn btn-primary" name="update_account_credentials">
+                        Save Changes<i class="bi-floppy ms-2"></i>
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+<!-- Modal -->
+<div class="modal fade" id="avatarModifcationModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="avatarModifcationModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg rounded-3">
+        <div class="modal-content border border-dashed rounded-3">
+
+            <div class="modal-header border-bottom bg-light-subtle">
+                <h5 class="modal-title fw-light" id="avatarModifcationModalLabel">
+                    <i class="bi-person-bounding-box me-2"></i>Update My Avatar
+                </h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+
+            <form class="needs-validation" autocomplete="on" method="post" action="/editAvatar/<%=user._id%>" enctype="multipart/form-data">
+
+                <div class="modal-body border-bottom-0">
+                    <div class="d-flex align-items-center">
+                        <!-- Avatar -->
+                                                    <img src="/IMG_UPLOADS<%=user.image%>" alt="avatar" class="account_avatar avatar-xl rounded-3" />
+                                                <div class="d-flex gap-2 ms-3">
+                            <input type="file" accept="image/*" class="form-control bg-light-subtle border border-dashed" name="image" id="image" required />
+                        </div>
+                    </div>
+                </div>
+
+                <div class="modal-footer border-top d-flex align-items-center">
+                    <input type="hidden" name="element_uuid" value="ea2fe2df-afe5-416c-a0fc-dd5b69e713ea">
+                    <button type="reset" class="btn bg-light-subtle text-primary border border-primary border-dashed me-auto align-items-center" data-bs-dismiss="modal">
+                        <i class="bi-arrow-clockwise me-1"></i>Cancel
+                    </button>
+                    <button type="submit" class="btn btn-primary" name="update_account_avatar">
+                        Save Changes<i class="bi-floppy ms-2"></i>
+                    </button>
+                </div>
+
+            </form>
+
+        </div>
+    </div>
+</div>
+
+<!-- Modal -->
+<div class="modal fade" id="securityConfigurationModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="securityConfigurationModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg rounded-3">
+        <div class="modal-content border border-dashed rounded-3">
+            <div class="modal-header border-bottom bg-light-subtle">
+                <h5 class="modal-title fw-light" id="securityConfigurationModalLabel">
+                    <i class="bi-shield-lock me-2"></i>Configure Account Security
+                </h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+
+            <div class="modal-body border-bottom-0">
+                <ul class="nav nav-pills nav-justified mb-3 bg-light-subtle p-2 rounded-3 border border-dashed justify-content-center" id="pills-tab" role="tablist">
+                    <li class="nav-item" role="presentation">
+                        <button class="nav-link rounded-3 tab-btn-toggler active" id="password-modification-tab" data-bs-toggle="pill" data-bs-target="#password-modification" type="button" role="tab" aria-controls="password-modification" aria-selected="true">Modify Password</button>
+                    </li>
+                                            <li class="nav-item" role="presentation">
+                            <button class="nav-link rounded-3 tab-btn-toggler" id="transaction-pin-modification-tab" data-bs-toggle="pill" data-bs-target="#transaction-pin-modification" type="button" role="tab" aria-controls="transaction-pin-modification" aria-selected="false">Transaction Pin</button>
+                        </li>
+                                    </ul>
+                <div class="tab-content" id="pills-tabContent">
+                    <div class="tab-pane fade show active" id="password-modification" role="tabpanel" aria-labelledby="password-modification-tab" tabindex="0">
+                        <form class="needs-validation" novalidate autocomplete="on" method="get" action="/change_password">
+                            <div class="row g-3">
+                                <div class="col-md-4">
+                                    <label for="current_password" class="form-label">
+                                        Current Password:
+                                    </label>
+                                    <div class="password-field position-relative">
+                                        <input type="password" autocomplete="on" placeholder="********" minlength="8" class="form-control bg-light-subtle border border-dashed fakePassword" id="current_password" name="current_password" required />
+                                        <span><i class="bi bi-eye-slash passwordToggler"></i></span>
+                                        <div class="invalid-feedback">This field is required.</div>
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <label for="new_password" class="form-label">
+                                        New Password:
+                                    </label>
+                                    <div class="password-field position-relative">
+                                        <input type="password" autocomplete="on" placeholder="********" minlength="8" class="form-control bg-light-subtle border border-dashed fakePassword" id="new_password" name="new_password" required />
+                                        <span><i class="bi bi-eye-slash passwordToggler"></i></span>
+                                        <div class="invalid-feedback">This field is required.</div>
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <label for="confirm_new_password" class="form-label">
+                                        Confirm Password:
+                                    </label>
+                                    <div class="password-field position-relative">
+                                        <input type="password" autocomplete="on" placeholder="********" minlength="8" class="form-control bg-light-subtle border border-dashed fakePassword" id="confirm_new_password" name="confirm_new_password" required />
+                                        <span><i class="bi bi-eye-slash passwordToggler"></i></span>
+                                        <div class="invalid-feedback">This field is required.</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="mt-4 d-flex align-items-center">
+                                <input type="hidden" name="element_uuid" value="ea2fe2df-afe5-416c-a0fc-dd5b69e713ea">
+                                <button type="reset" class="btn bg-light-subtle text-primary border border-primary border-dashed me-auto align-items-center" data-bs-dismiss="modal">
+                                    <i class="bi-arrow-clockwise me-1"></i>Cancel
+                                </button>
+                                <button type="submit" class="btn btn-primary" name="update_account_password">
+                                    Save Changes<i class="bi-floppy ms-2"></i>
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+                                            <div class="tab-pane fade" id="transaction-pin-modification" role="tabpanel" aria-labelledby="transaction-pin-modification-tab" tabindex="0">
+                            <form class="needs-validation" novalidate autocomplete="on" method="get" action="/change_password">
+                                <div class="row g-3">
+                                    <div class="col-md-12">
+                                        <label for="new_transaction_pin" class="form-label">
+                                            New <span class="fw-bold">(4-Digit)</span> Transaction Pin:
+                                        </label>
+                                        <div class="password-field position-relative">
+                                            <input type="password" autocomplete="on" placeholder="****" minlength="4" maxlength="4" class="form-control bg-light-subtle border border-dashed fakePassword" id="new_transaction_pin" name="new_transaction_pin" required />
+                                            <span><i class="bi bi-eye-slash passwordToggler"></i></span>
+                                            <div class="invalid-feedback">This field is required.</div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="mt-4 d-flex align-items-center">
+                                    <input type="hidden" name="element_uuid" value="ea2fe2df-afe5-416c-a0fc-dd5b69e713ea">
+                                    <button type="reset" class="btn bg-light-subtle text-primary border border-primary border-dashed me-auto align-items-center" data-bs-dismiss="modal">
+                                        <i class="bi-arrow-clockwise me-1"></i>Cancel
+                                    </button>
+                                    <button type="submit" class="btn btn-primary" name="update_transaction_pin">
+                                        Save Changes<i class="bi-floppy ms-2"></i>
+                                    </button>
+                                </div>
+                            </form>
+                        </div>
+                                    </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Modal -->
+<div class="modal fade" id="txnReceiptPreviewModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="txnReceiptPreviewModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered rounded-3">
+        <div class="modal-content border border-dashed rounded-3">
+            <div class="modal-header border-bottom bg-light-subtle">
+                <h5 class="modal-title fw-light" id="txnReceiptPreviewModalLabel">
+                    <i class="bi-receipt me-2"></i>Preview Transaction Receipt
+                </h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body border-bottom-0" id="txnReceiptPreviewBody">...</div>
+        </div>
+    </div>
+</div>
+
+<!-- Modal -->
+<div class="modal fade" id="loanDetailsPreviewModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="loanDetailsPreviewModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered rounded-3">
+        <div class="modal-content border border-dashed rounded-3">
+            <div class="modal-header border-bottom bg-light-subtle">
+                <h5 class="modal-title fw-light" id="loanDetailsPreviewModalLabel">
+                    <i class="bi-diagram-3 me-2"></i>Preview Loan Details
+                </h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body border-bottom-0" id="loanDetailsPreviewBody">...</div>
+        </div>
+    </div>
+</div>
+
+
+   <!-- @Partial - Require Footer -->
+   <footer class="container py-4">
+    <div class="row align-items-center">
+        <div class="col-md-3">
+            <a class="mb-4 mb-lg-0 d-block text-inverse" href="#"><img src="../_presets/images/logo/logo.svg" alt="" /></a>
+        </div>
+        <div class="col-md-9 col-lg-6">
+            <div class="small mb-3 mb-lg-0 text-lg-center">
+                Copyright © 2024
+                <span class="text-primary"><a href="#">Nexus Finance</a></span>
+                | All rights reserved -
+                <span class="text-primary"><a href="#">NexusFN Inc.</a></span>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="text-md-end">
+                <a href="javascipt:void(0);" class="me-1 btn btn-sm rounded-3 bg-light border border-dashed border-primary btn-icon">
+                    <div class="dropdown">
+                        <button class="text-primary btn btn-icon border-0 d-flex align-items-center bd-theme" type="button" aria-expanded="false" data-bs-toggle="dropdown" aria-label="Toggle theme (auto)">
+                            <i class="bi theme-icon-active" style="margin-bottom: -2px;"></i>
+                            <span class="visually-hidden bs-theme-text">Toggle theme</span>
+                        </button>
+                        <ul class="dropdown-menu dropdown-menu-end shadow" aria-labelledby="bs-theme-text">
+                            <li>
+                                <button type="button" class="dropdown-item d-flex align-items-center" data-bs-theme-value="light" aria-pressed="false">
+                                    <i class="bi theme-icon bi-sun-fill"></i>
+                                    <span class="ms-2">Light</span>
+                                </button>
+                            </li>
+                            <li>
+                                <button type="button" class="dropdown-item d-flex align-items-center" data-bs-theme-value="dark" aria-pressed="false">
+                                    <i class="bi theme-icon bi-moon-stars-fill"></i>
+                                    <span class="ms-2">Dark</span>
+                                </button>
+                            </li>
+                            <li>
+                                <button type="button" class="dropdown-item d-flex align-items-center active" data-bs-theme-value="auto" aria-pressed="true">
+                                    <i class="bi theme-icon bi-circle-half"></i>
+                                    <span class="ms-2">Auto</span>
+                                </button>
+                            </li>
+                        </ul>
+                    </div>
+                </a>
+                <a href="https://www.instagram.com/" target="_blank" class="text-primary me-1 btn btn-sm rounded-3 bg-light border border-dashed border-primary btn-icon">
+                    <i class="bi-instagram fs-5" style="margin-bottom: -2px;"></i>
+                </a>
+                <a href="https://www.x.com/" target="_blank" class="text-primary me-1 btn btn-sm rounded-3 bg-light border border-dashed border-primary btn-icon">
+                    <i class="bi-twitter-x fs-5" style="margin-bottom: -2px;"></i>
+                </a>
+                <a href="https://www.threads.net/" target="_blank" class="text-primary me-1 btn btn-sm rounded-3 bg-light border border-dashed border-primary btn-icon">
+                    <i class="bi-threads fs-5" style="margin-bottom: -2px;"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<!-- Scroll top -->
+<div class="btn-scroll-top">
+    <svg class="progress-square svg-content" width="100%" height="100%" viewBox="0 0 40 40">
+        <path d="M8 1H32C35.866 1 39 4.13401 39 8V32C39 35.866 35.866 39 32 39H8C4.13401 39 1 35.866 1 32V8C1 4.13401 4.13401 1 8 1Z" />
+    </svg>
+</div>
+
+
+   <!-- @Partial - Require Scripts -->
+   <!-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ" crossorigin="anonymous"></script> -->
+   <!-- Libs JS -->
+<script src="../_presets/libs/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+<script src="../_presets/libs/simplebar/dist/simplebar.min.js"></script>
+<script src="../_presets/libs/headhesive/dist/headhesive.min.js"></script>
+
+<!-- Theme JS -->
+<script src="../_presets/js/theme.min.js"></script>
+<script src="../_presets/js/vendors/password.js"></script>
+
+<!-- Swiper JS -->
+<script src="../_presets/libs/swiper/swiper-bundle.min.js"></script>
+<script src="../_presets/js/vendors/swiper.js"></script>
+<script src="../_presets/libs/scrollcue/scrollCue.min.js"></script>
+<script src="../_presets/js/vendors/scrollcue.js"></script>
+
+<!-- Vertex Table JS -->
+<script src="../_presets/js/vendors/vertex-table.js"></script>
+
+<!-- Google Translate JS -->
+<script type="text/javascript" src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+
+<!-- Custom JS -->
+<script src="../_presets/js/custom.js"></script>
+
+<!-- Start of HubSpot Embed Code -->
+<!-- <script type="text/javascript" id="hs-script-loader" async defer src="//js-eu1.hs-scripts.com/145194122.js"></script> -->
+<!-- End of HubSpot Embed Code -->
+</body>
+
+</html>

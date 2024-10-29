@@ -1,0 +1,644 @@
+<!doctype html>
+<html lang="en">
+
+
+<!-- Mirrored from nexusfinance.live/srv-auth/onboarding by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 03 Oct 2024 14:40:24 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+
+   <!-- @Partial - Require Stylers -->
+   
+<!-- Required meta tags -->
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+
+<!-- Favicon icon-->
+<link rel="apple-touch-icon" sizes="180x180" href="../_presets/images/favicon/apple-touch-icon.png" />
+<link rel="icon" type="image/png" sizes="32x32" href="../_presets/images/favicon/favicon-32x32.png" />
+<link rel="icon" type="image/png" sizes="16x16" href="../_presets/images/favicon/favicon-16x16.png" />
+<link rel="mask-icon" href="../_presets/images/favicon/block-safari-pinned-tab.svg" color="#8b3dff" />
+<link rel="shortcut icon" href="../_presets/images/favicon/favicon.ico" />
+<meta name="msapplication-TileColor" content="#8b3dff" />
+<meta name="msapplication-config" content="../_presets/images/favicon/tile.xml" />
+
+<!-- Color modes -->
+<script src="../_presets/js/vendors/color-modes.js"></script>
+
+<!-- Libs CSS -->
+<link href="../_presets/libs/simplebar/dist/simplebar.min.css" rel="stylesheet" />
+<link href="../_presets/libs/bootstrap-icons/font/bootstrap-icons.min.css" rel="stylesheet" />
+
+<!-- Scroll Cue -->
+<link rel="stylesheet" href="../_presets/libs/scrollcue/scrollCue.css" />
+
+<!-- Box icons -->
+<link rel="stylesheet" href="../_presets/fonts/css/boxicons.min.css" />
+
+<!-- Theme CSS -->
+<link rel="stylesheet" href="../_presets/css/theme.min.css">
+
+<!-- Custom CSS -->
+<link rel="stylesheet" href="../_presets/css/custom.css">
+   <title>Account Onboarding - Business & Personal Banking Solution | Nexus Finance</title>
+
+</head>
+
+<body>
+
+   <main>
+
+      <div class="position-relative h-100">
+         <div class="container d-flex flex-wrap justify-content-center align-items-center vh-100 w-lg-50 position-lg-absolute">
+            <div class="row justify-content-center">
+               <div class="w-100 align-self-end col-12">
+
+                  <div class="text-center mb-4">
+
+                     <!-- @Partial - Require Brand -->
+                     <a href="/register" class="text-inverse"><img src="../_presets/images/logo/logo.svg" alt="brand" class="mt-4 mb-1" /></a>
+                     <h1 class="mb-1">Account Onboarding</h1>
+                     <p class="mb-0">
+                        Already have an account?
+                        <a href="/login" class="text-primary"> Login here</a>
+                     </p>
+                  </div>
+
+                  <form class="needs-validation mb-5" novalidate autocomplete="on" method="post" action="/register" enctype="multipart/form-data">
+
+                     <a href="javascript:void(0);" class="badge bg-light rounded-1 border border-primary border-dashed text-primary mb-3">Personal Information</a>
+
+                     <div class="row g-3 mb-3">
+                        <div class="col-md-6">
+                           <label for="full_names" class="form-label">
+                              Full Names
+                              <span class="text-danger">*</span>
+                           </label>
+                           <input type="text" class="form-control bg-light-subtle border border-dashed" autocomplete="on" placeholder="e.g. John Doe" id="fullname" name="fullname" required />
+                           <span class="fullname error"></span>
+                        </div>
+                        <div class="col-md-6">
+                           <label for="email_address" class="form-label">
+                              Email Address
+                              <span class="text-danger">*</span>
+                           </label>
+                           <input type="email" class="form-control bg-light-subtle border border-dashed" autocomplete="on" placeholder="e.g. user@gmail.com" id="email" name="email" required />
+                           <span class="email error"></span>
+                        </div>
+                     </div>
+
+                     <div class="row g-3 mb-3">
+                        <div class="col-md-5">
+                           <label for="date_of_birth" class="form-label">
+                              Date of Birth
+                              <span class="text-danger">*</span>
+                           </label>
+                           <input type="date" class="form-control bg-light-subtle border border-dashed" id="Dob" name="Dob" required />
+                           <span class="Dob error"></span>
+                        </div>
+                        <div class="col-md-7">
+                           <label for="gender" class="form-label">
+                              Gender
+                              <span class="text-danger">*</span>
+                           </label>
+                           <select autocomplete="on" class="form-control bg-light-subtle border border-dashed" id="gender" name="gender" required>
+                              <option value="">-- Select Gender --</option>
+                              <option value="Female">Female</option>
+                              <option value="Male">Male</option>
+                              <option value="Others">Others</option>
+                           </select>
+                           <span class="gender error"></span>
+                        </div>
+                     </div>
+
+                     <div class="row g-3 mb-3">
+                        <div class="col-md-7">
+                           <label for="phone_number" class="form-label">
+                              Phone Number
+                              <span class="text-danger">*</span>
+                           </label>
+                           <input type="tel" autocomplete="on" placeholder="e.g. +1 234-567-8901" class="form-control bg-light-subtle border border-dashed" required id="tel" name="tel" />
+                           <span class="tel error"></span>
+                        </div>
+                        <div class="col-md-5">
+                           <label for="employment_status" class="form-label">
+                              Employment Status
+                              <span class="text-danger">*</span>
+                           </label>
+                           <select autocomplete="on" class="form-control bg-light-subtle border border-dashed" id="employ" name="employ" required>
+                              <option value="">-- Choose Option --</option>
+                              <option value="Internship">Internship</option>
+                              <option value="Student">Student</option>
+                              <option value="Full-Time">Full-Time</option>
+                              <option value="Part-Time">Part-Time</option>
+                              <option value="Contract">Contract</option>
+                           </select>
+                           <span class="employ error"></span>
+                        </div>
+                     </div>
+
+                     <div class="row g-3 mb-3">
+                        <div class="col-md-12">
+                           <label for="account_type" class="form-label">
+                              Account Type
+                              <span class="text-danger">*</span>
+                           </label>
+                           <select autocomplete="on" class="form-control bg-light-subtle border border-dashed" id="account" name="account" required>
+                              <option value="">-- Choose Option --</option>
+                              <option value="Savings">Savings</option>
+                              <option value="Checking">Checking</option>
+                              <option value="Current">Current</option>
+                              <option value="Business">Business</option>
+                           </select>
+                           <span class="account error"></span>
+                        </div>
+                     </div>
+
+                     <a href="javascript:void(0);" class="badge bg-light rounded-1 border border-primary border-dashed text-primary mb-3 mt-3">Contact Information</a>
+
+                     <div class="row g-3 mb-3">
+                        <div class="col-md-8">
+                           <label for="residential_address" class="form-label">
+                              Residential Address
+                              <span class="text-danger">*</span>
+                           </label>
+                           <input type="text" autocomplete="on" placeholder="e.g. 123, Crescent Avenue, NY" class="form-control bg-light-subtle border border-dashed" id="address" name="address" required />
+                           <span class="address error"></span>
+                        </div>
+                        <div class="col-md-4">
+                           <label for="apt_number" class="form-label">
+                              Apt. Number
+                              <span class="text-danger">*</span>
+                           </label>
+                           <input type="number" autocomplete="on" placeholder="e.g. 212" class="form-control bg-light-subtle border border-dashed" id="aptNo" name="aptNo" required />
+                           <span class="aptNo error"></span>
+                        </div>
+                     </div>
+
+                     <div class="row g-3 mb-3">
+                        <div class="col-md-6">
+                           <label for="country" class="form-label">
+                              Country
+                              <span class="text-danger">*</span>
+                           </label>
+                           <select autocomplete="on" class="form-control bg-light-subtle border border-dashed" id="country" name="country" required>
+                              <option value="">-- Choose Option --</option>
+<option value="Afghanistan">Afghanistan</option>
+<option value="Åland Islands">Åland Islands</option>
+<option value="Albania">Albania</option>
+<option value="Algeria">Algeria</option>
+<option value="American Samoa">American Samoa</option>
+<option value="Andorra">Andorra</option>
+<option value="Angola">Angola</option>
+<option value="Anguilla">Anguilla</option>
+<option value="Antarctica">Antarctica</option>
+<option value="Antigua and Barbuda">Antigua and Barbuda</option>
+<option value="Argentina">Argentina</option>
+<option value="Armenia">Armenia</option>
+<option value="Aruba">Aruba</option>
+<option value="Australia">Australia</option>
+<option value="Austria">Austria</option>
+<option value="Azerbaijan">Azerbaijan</option>
+<option value="Bahamas">Bahamas</option>
+<option value="Bahrain">Bahrain</option>
+<option value="Bangladesh">Bangladesh</option>
+<option value="Barbados">Barbados</option>
+<option value="Belarus">Belarus</option>
+<option value="Belgium">Belgium</option>
+<option value="Belize">Belize</option>
+<option value="Benin">Benin</option>
+<option value="Bermuda">Bermuda</option>
+<option value="Bhutan">Bhutan</option>
+<option value="Bolivia">Bolivia</option>
+<option value="Botswana">Botswana</option>
+<option value="Bouvet Island">Bouvet Island</option>
+<option value="Brazil">Brazil</option>
+<option value="Brunei Darussalam">Brunei Darussalam</option>
+<option value="Bulgaria">Bulgaria</option>
+<option value="Burkina Faso">Burkina Faso</option>
+<option value="Burundi">Burundi</option>
+<option value="Cambodia">Cambodia</option>
+<option value="Cameroon">Cameroon</option>
+<option value="Canada">Canada</option>
+<option value="Cape Verde">Cape Verde</option>
+<option value="Cayman Islands">Cayman Islands</option>
+<option value="Central African Republic">Central African Republic</option>
+<option value="Chad">Chad</option>
+<option value="Chile">Chile</option>
+<option value="China">China</option>
+<option value="Christmas Island">Christmas Island</option>
+<option value="Cocos (Keeling) Islands">Cocos (Keeling) Islands</option>
+<option value="Colombia">Colombia</option>
+<option value="Comoros">Comoros</option>
+<option value="Congo">Congo</option>
+<option value="Cook Islands">Cook Islands</option>
+<option value="Costa Rica">Costa Rica</option>
+<option value="Cote D'ivoire">Cote D'ivoire</option>
+<option value="Croatia">Croatia</option>
+<option value="Cuba">Cuba</option>
+<option value="Cyprus">Cyprus</option>
+<option value="Czech Republic">Czech Republic</option>
+<option value="Denmark">Denmark</option>
+<option value="Djibouti">Djibouti</option>
+<option value="Dominica">Dominica</option>
+<option value="Dominican Republic">Dominican Republic</option>
+<option value="Ecuador">Ecuador</option>
+<option value="Egypt">Egypt</option>
+<option value="El Salvador">El Salvador</option>
+<option value="Equatorial Guinea">Equatorial Guinea</option>
+<option value="Eritrea">Eritrea</option>
+<option value="Estonia">Estonia</option>
+<option value="Ethiopia">Ethiopia</option>
+<option value="Faroe Islands">Faroe Islands</option>
+<option value="Fiji">Fiji</option>
+<option value="Finland">Finland</option>
+<option value="France">France</option>
+<option value="French Guiana">French Guiana</option>
+<option value="French Polynesia">French Polynesia</option>
+<option value="Gabon">Gabon</option>
+<option value="Gambia">Gambia</option>
+<option value="Georgia">Georgia</option>
+<option value="Germany">Germany</option>
+<option value="Ghana">Ghana</option>
+<option value="Gibraltar">Gibraltar</option>
+<option value="Greece">Greece</option>
+<option value="Greenland">Greenland</option>
+<option value="Grenada">Grenada</option>
+<option value="Guadeloupe">Guadeloupe</option>
+<option value="Guam">Guam</option>
+<option value="Guatemala">Guatemala</option>
+<option value="Guernsey">Guernsey</option>
+<option value="Guinea">Guinea</option>
+<option value="Guinea-bissau">Guinea-bissau</option>
+<option value="Guyana">Guyana</option>
+<option value="Haiti">Haiti</option>
+<option value="Honduras">Honduras</option>
+<option value="Hong Kong">Hong Kong</option>
+<option value="Hungary">Hungary</option>
+<option value="Iceland">Iceland</option>
+<option value="India">India</option>
+<option value="Indonesia">Indonesia</option>
+<option value="Iraq">Iraq</option>
+<option value="Ireland">Ireland</option>
+<option value="Isle of Man">Isle of Man</option>
+<option value="Israel">Israel</option>
+<option value="Italy">Italy</option>
+<option value="Jamaica">Jamaica</option>
+<option value="Japan">Japan</option>
+<option value="Jersey">Jersey</option>
+<option value="Jordan">Jordan</option>
+<option value="Kazakhstan">Kazakhstan</option>
+<option value="Kenya">Kenya</option>
+<option value="Kiribati">Kiribati</option>
+<option value="Kuwait">Kuwait</option>
+<option value="Kyrgyzstan">Kyrgyzstan</option>
+<option value="Latvia">Latvia</option>
+<option value="Lebanon">Lebanon</option>
+<option value="Lesotho">Lesotho</option>
+<option value="Liberia">Liberia</option>
+<option value="Liechtenstein">Liechtenstein</option>
+<option value="Lithuania">Lithuania</option>
+<option value="Luxembourg">Luxembourg</option>
+<option value="Macao">Macao</option>
+<option value="Madagascar">Madagascar</option>
+<option value="Malawi">Malawi</option>
+<option value="Malaysia">Malaysia</option>
+<option value="Maldives">Maldives</option>
+<option value="Mali">Mali</option>
+<option value="Malta">Malta</option>
+<option value="Marshall Islands">Marshall Islands</option>
+<option value="Martinique">Martinique</option>
+<option value="Mauritania">Mauritania</option>
+<option value="Mauritius">Mauritius</option>
+<option value="Mayotte">Mayotte</option>
+<option value="Mexico">Mexico</option>
+<option value="Monaco">Monaco</option>
+<option value="Mongolia">Mongolia</option>
+<option value="Montenegro">Montenegro</option>
+<option value="Montserrat">Montserrat</option>
+<option value="Morocco">Morocco</option>
+<option value="Mozambique">Mozambique</option>
+<option value="Myanmar">Myanmar</option>
+<option value="Namibia">Namibia</option>
+<option value="Nauru">Nauru</option>
+<option value="Nepal">Nepal</option>
+<option value="Netherlands">Netherlands</option>
+<option value="New Caledonia">New Caledonia</option>
+<option value="New Zealand">New Zealand</option>
+<option value="Nicaragua">Nicaragua</option>
+<option value="Niger">Niger</option>
+<option value="Nigeria">Nigeria</option>
+<option value="Niue">Niue</option>
+<option value="Norfolk Island">Norfolk Island</option>
+<option value="Norway">Norway</option>
+<option value="Oman">Oman</option>
+<option value="Pakistan">Pakistan</option>
+<option value="Palau">Palau</option>
+<option value="Panama">Panama</option>
+<option value="Papua New Guinea">Papua New Guinea</option>
+<option value="Paraguay">Paraguay</option>
+<option value="Peru">Peru</option>
+<option value="Philippines">Philippines</option>
+<option value="Pitcairn">Pitcairn</option>
+<option value="Poland">Poland</option>
+<option value="Portugal">Portugal</option>
+<option value="Puerto Rico">Puerto Rico</option>
+<option value="Qatar">Qatar</option>
+<option value="Reunion">Reunion</option>
+<option value="Romania">Romania</option>
+<option value="Russian Federation">Russian Federation</option>
+<option value="Rwanda">Rwanda</option>
+<option value="Saint Helena">Saint Helena</option>
+<option value="Saint Kitts and Nevis">Saint Kitts and Nevis</option>
+<option value="Saint Lucia">Saint Lucia</option>
+<option value="Samoa">Samoa</option>
+<option value="San Marino">San Marino</option>
+<option value="Sao Tome and Principe">Sao Tome and Principe</option>
+<option value="Saudi Arabia">Saudi Arabia</option>
+<option value="Senegal">Senegal</option>
+<option value="Serbia">Serbia</option>
+<option value="Seychelles">Seychelles</option>
+<option value="Sierra Leone">Sierra Leone</option>
+<option value="Singapore">Singapore</option>
+<option value="Slovakia">Slovakia</option>
+<option value="Slovenia">Slovenia</option>
+<option value="Solomon Islands">Solomon Islands</option>
+<option value="Somalia">Somalia</option>
+<option value="South Africa">South Africa</option>
+<option value="Spain">Spain</option>
+<option value="Sri Lanka">Sri Lanka</option>
+<option value="Sudan">Sudan</option>
+<option value="Suriname">Suriname</option>
+<option value="Svalbard and Jan Mayen">Svalbard and Jan Mayen</option>
+<option value="Swaziland">Swaziland</option>
+<option value="Sweden">Sweden</option>
+<option value="Switzerland">Switzerland</option>
+<option value="Syrian Arab Republic">Syrian Arab Republic</option>
+<option value="Taiwan">Taiwan</option>
+<option value="Tajikistan">Tajikistan</option>
+<option value="Thailand">Thailand</option>
+<option value="Timor-leste">Timor-leste</option>
+<option value="Togo">Togo</option>
+<option value="Tokelau">Tokelau</option>
+<option value="Tonga">Tonga</option>
+<option value="Trinidad and Tobago">Trinidad and Tobago</option>
+<option value="Tunisia">Tunisia</option>
+<option value="Turkey">Turkey</option>
+<option value="Turkmenistan">Turkmenistan</option>
+<option value="Turks and Caicos Islands">Turks and Caicos Islands</option>
+<option value="Tuvalu">Tuvalu</option>
+<option value="Uganda">Uganda</option>
+<option value="Ukraine">Ukraine</option>
+<option value="United Arab Emirates">United Arab Emirates</option>
+<option value="United Kingdom">United Kingdom</option>
+<option value="United States">United States</option>
+<option value="Uruguay">Uruguay</option>
+<option value="Uzbekistan">Uzbekistan</option>
+<option value="Vanuatu">Vanuatu</option>
+<option value="Venezuela">Venezuela</option>
+<option value="Viet Nam">Viet Nam</option>
+<option value="Virgin Islands, British">Virgin Islands, British</option>
+<option value="Virgin Islands, U.S.">Virgin Islands, U.S.</option>
+<option value="Wallis and Futuna">Wallis and Futuna</option>
+<option value="Western Sahara">Western Sahara</option>
+<option value="Yemen">Yemen</option>
+<option value="Zambia">Zambia</option>
+<option value="Zimbabwe">Zimbabwe</option>                           </select>
+                           <span class="country error"></span>
+                        </div>
+                        <div class="col-md-6">
+                           <label for="region" class="form-label">
+                              Region
+                              <span class="text-danger">*</span>
+                           </label>
+                           <input type="text" autocomplete="on" placeholder="e.g. Texas" class="form-control bg-light-subtle border border-dashed" id="region" name="region" required />
+                           <span class="region error"></span>
+                        </div>
+                     </div>
+
+                     <a href="javascript:void(0);" class="badge bg-light rounded-1 border border-primary border-dashed text-primary mb-3 mt-3">Security Credentials</a>
+
+                     <div class="row g-3 mb-3">
+                        <div class="col-md-8">
+                           <label for="username" class="form-label">
+                              Username
+                              <span class="text-danger">*</span>
+                           </label>
+                           <input type="text" autocomplete="on" placeholder="e.g. John-Doe" class="form-control bg-light-subtle border border-dashed" id="username" name="username" required />
+                           <span class="username error"></span>
+                        </div>
+                        <div class="col-md-4">
+                           <label for="transaction_pin" class="form-label">
+                              <span class="fw-bold">(4-Digit)</span> Transaction Pin
+                              <span class="text-danger">*</span>
+                           </label>
+                           <div class="password-field position-relative">
+                              <input type="password" autocomplete="on" placeholder="****" minlength="4" maxlength="4" class="form-control bg-light-subtle border border-dashed fakePassword" id="pin" name="pin" required />
+                              <span><i class="bi bi-eye-slash passwordToggler"></i></span>
+                              <span class="pin error"></span>
+                           </div>
+                        </div>
+                     </div>
+
+                     <div class="row g-3 mb-3">
+                        <div class="col-md-12">
+                           <label for="password" class="form-label">
+                              Password
+                              <span class="text-danger">*</span>
+                           </label>
+                           <div class="password-field position-relative">
+                              <input type="password" autocomplete="on" placeholder="********" minlength="8" class="form-control bg-light-subtle border border-dashed fakePassword" id="password" name="password" required />
+                              <span><i class="bi bi-eye-slash passwordToggler"></i></span>
+                              <span class="password error"></span>
+                           </div>
+                        </div>
+                     
+                     </div>
+
+                     <!-- <a href="javascript:void(0);" class="badge bg-light rounded-1 border border-primary border-dashed text-primary mb-3 mt-3">Govt. Issued ID.</a> -->
+
+                     <!-- <div class="row g-3 mb-3">
+                        <div class="col-md-6">
+                           <label for="id_type" class="form-label">
+                              ID Type
+                              <span class="text-danger">*</span>
+                           </label>
+                           <select autocomplete="on" class="form-control bg-light-subtle border border-dashed" id="idType" name="idType" required>
+                              <option value="">-- Choose Option --</option>
+                              <option value="Int'l Passport">Int'l Passport</option>
+                              <option value="National ID">National ID</option>
+                              <option value="SSN Card">SSN Card</option>
+                              <option value="Voter's Card">Voter's Card</option>
+                              <option value="Driver's License">Driver's License</option>
+                           </select>
+                           <span class="idType"></span>
+                        </div>
+                        <div class="col-md-6">
+                           <label for="govt_id" class="form-label">
+                              Upload ID
+                              <span class="text-danger">*</span>
+                           </label>
+                           <input type="file"  class="form-control bg-light-subtle border border-dashed" id="image" name="image" accept="image/" required />
+                           <span class="image error"></span>
+                        </div>
+                     </div> -->
+
+                     <div class="mb-3">
+                        <div class="d-flex align-items-center justify-content-between">
+                           <div class="form-check">
+                              <input class="form-check-input" type="checkbox" id="policy_agreement" name="policy_agreement" required />
+                              <label class="form-check-label ms-2" for="policy_agreement">
+                                 Kindly agree to our <a href="/policies">Terms of Service</a>
+                              </label>
+                           </div>
+                        </div>
+                     </div>
+
+                     <div class="d-grid">
+                        <button class="btn btn-primary" name="initialize_registration" type="submit">Initialize Registration</button>
+                     </div>
+                  </form>
+
+                  <!-- @Partial - Require Footer -->
+                  <small><i class="bi-braces-asterisk text-primary"></i> Sign in with a social network.</small>
+
+<div class="d-grid mt-3">
+    <a href="javascript:void(0);" class="btn btn-light border border-primary text-primary border-dashed">
+        <span class="me-2">
+            <i class="bi-google"></i>
+        </span>
+        Continue with Google
+    </a>
+</div>
+
+<div class="text-center my-5">
+    <div class="small text-body-tertiary">
+        Copyright © 2024        <span class="text-primary"><a href="/">Nexus Finance</a></span>
+        | All rights reserved -
+        <span class="text-primary"><a href="/policies">NexusFN Inc.</a></span>
+    </div>
+</div>
+<script>
+   const form = document.querySelector('form');
+
+   const emailError = document.querySelector('.email.error');
+   const passwordError = document.querySelector('.password.error');
+ 
+   form.addEventListener('submit', async (e) => {
+     e.preventDefault();
+     // reset errors
+     emailError.textContent = '';
+     passwordError.textContent = '';
+  
+     // get values
+     const fullname = form.fullname.value;
+     const email = form.email.value;
+     const Dob = form.Dob.value;
+     const gender = form.gender.value;
+     const tel = form.tel.value;
+     const employ = form.employ.value;
+     const account = form.account.value;
+     const address = form.address.value;
+     const aptNo = form.aptNo.value;
+     const country = form.country.value;
+     const region = form.region.value;
+     const pin = form.pin.value;
+     const username = form.username.value;
+   //   const idType = form.idType.value;
+   //   const image = form.image.value;
+     const password = form.password.value;
+     try {
+       const res = await fetch('/register', { 
+         method: 'POST', 
+         body: JSON.stringify({fullname,email,Dob,gender,tel,employ,account,address,aptNo,country,region,
+            pin, username, password
+         }),
+         headers: {'Content-Type': 'application/json'}
+       });
+       const data = await res.json();
+       console.log(data);
+       if (data.errors) {
+         emailError.textContent = data.errors.email;
+         passwordError.textContent = data.errors.password;
+       }
+       if (data.user) {
+         location.assign('/dashboard');
+       }
+     }
+     catch (err) {
+       console.log(err);
+     }
+   });
+ </script>
+    <div class="toast-container position-fixed bottom-0 end-0 p-3">
+        <div id="siteToast" class="toast d-block bg-white border border-dashed" role="alert" aria-live="assertive" aria-atomic="true">
+            <div class="toast-header" style="padding-top: 11px;">
+                <a href="/" class="text-inverse me-auto">
+                    <img src="../_presets/images/logo/logo.svg" alt="brand" style="width: 125px; margin-top: -5px;" />
+                </a>
+                <small class="text-inverse">A few seconds ago</small>
+                <button type="button" class="btn-close" id="closeToastBtn"></button>
+            </div>
+            <div class="toast-body text-inverse">
+                Please login to access this page. Having trouble logging in? please contact support.            </div>
+        </div>
+    </div>
+
+               </div>
+            </div>
+         </div>
+
+         <div class="position-fixed top-0 end-0 w-50 h-100 d-none d-lg-block vh-100" style="background-image: url(../_presets/images/sign-in/authentication-img.jpg); background-position: center; background-repeat: no-repeat; background-size: cover"></div>
+
+      </div>
+
+      <!-- @Partial - Require Theme -->
+      <div class="position-absolute start-0 bottom-0 m-4 d-none">
+    <div class="dropdown">
+        <button class="text-primary btn btn-sm rounded-3 bg-light border border-dashed border-primary btn-icon d-flex align-items-center" type="button" aria-expanded="false" data-bs-toggle="dropdown" aria-label="Toggle theme (auto)">
+            <i class="bi theme-icon-active"></i>
+            <span class="visually-hidden bs-theme-text">Toggle theme</span>
+        </button>
+        <ul class="dropdown-menu dropdown-menu-end shadow" aria-labelledby="bs-theme-text">
+            <li>
+                <button type="button" class="dropdown-item d-flex align-items-center" data-bs-theme-value="light" aria-pressed="false">
+                    <i class="bi theme-icon bi-sun-fill"></i>
+                    <span class="ms-2">Light</span>
+                </button>
+            </li>
+            <li>
+                <button type="button" class="dropdown-item d-flex align-items-center" data-bs-theme-value="dark" aria-pressed="false">
+                    <i class="bi theme-icon bi-moon-stars-fill"></i>
+                    <span class="ms-2">Dark</span>
+                </button>
+            </li>
+            <li>
+                <button type="button" class="dropdown-item d-flex align-items-center active" data-bs-theme-value="auto" aria-pressed="true">
+                    <i class="bi theme-icon bi-circle-half"></i>
+                    <span class="ms-2">Auto</span>
+                </button>
+            </li>
+        </ul>
+    </div>
+</div>
+   </main>
+
+   <!-- @Partial - Require Scripts -->
+   <!-- Libs JS -->
+<script src="../_presets/libs/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+<script src="../_presets/libs/simplebar/dist/simplebar.min.js"></script>
+<script src="../_presets/libs/headhesive/dist/headhesive.min.js"></script>
+
+<!-- Theme JS -->
+<script src="../_presets/js/custom.js"></script>
+<script src="../_presets/js/theme.min.js"></script>
+
+<script src="../_presets/js/vendors/password.js"></script>
+
+<!-- Start of HubSpot Embed Code -->
+<script type="text/javascript" id="hs-script-loader" async defer src="../../js-eu1.hs-scripts.com/145194122.js"></script>
+<!-- End of HubSpot Embed Code -->
+</body>
+
+
+<!-- Mirrored from nexusfinance.live/srv-auth/onboarding by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 03 Oct 2024 14:40:24 GMT -->
+</html>

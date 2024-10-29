@@ -1,0 +1,424 @@
+
+<!doctype html>
+<html lang="en">
+
+<head>
+
+   <!-- @Partial - Require Stylers -->
+   
+<link rel="stylesheet" href="../_presets/libs/swiper/swiper-bundle.min.css" />
+
+<!-- Required meta tags -->
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+
+<!-- Favicon icon-->
+<link rel="apple-touch-icon" sizes="180x180" href="../_presets/images/favicon/apple-touch-icon.png" />
+<link rel="icon" type="image/png" sizes="32x32" href="../_presets/images/favicon/favicon-32x32.png" />
+<link rel="icon" type="image/png" sizes="16x16" href="../_presets/images/favicon/favicon-16x16.png" />
+<link rel="mask-icon" href="../_presets/images/favicon/block-safari-pinned-tab.svg" color="#8b3dff" />
+<link rel="shortcut icon" href="../_presets/images/favicon/favicon.ico" />
+<meta name="msapplication-TileColor" content="#8b3dff" />
+<meta name="msapplication-config" content="../_presets/images/favicon/tile.xml" />
+
+<!-- Color modes -->
+<script src="../_presets/js/vendors/color-modes.js"></script>
+
+<!-- Libs CSS -->
+<link href="../_presets/libs/simplebar/dist/simplebar.min.css" rel="stylesheet" />
+<link href="../_presets/libs/bootstrap-icons/font/bootstrap-icons.min.css" rel="stylesheet" />
+
+<!-- Scroll Cue -->
+<link rel="stylesheet" href="../_presets/libs/scrollcue/scrollCue.css" />
+
+<!-- Box icons -->
+<link rel="stylesheet" href="../_presets/fonts/css/boxicons.min.css" />
+
+<!-- Theme CSS -->
+<link rel="stylesheet" href="../_presets/css/theme.min.css">
+
+<!-- Custom CSS -->
+<link rel="stylesheet" href="../_presets/css/custom.css">
+   <title>Admin Dashboard - Business & Personal Banking Solution | Nexus Finance</title>
+
+</head>
+
+<body>
+
+   <!-- @Partial - Require Header -->
+   <!-- Navbar -->
+<header>
+    <nav class="navbar navbar-expand-lg navbar-light w-100">
+        <div class="container px-3">
+            <a class="navbar-brand mt-n1" href="../"><img src="../_presets/images/logo/logo.svg" alt /></a>
+            <button class="navbar-toggler offcanvas-nav-btn" type="button">
+                <i class="bi bi-list"></i>
+            </button>
+            <div class="offcanvas offcanvas-start offcanvas-nav" style="width: 20rem">
+                <div class="offcanvas-header">
+                    <a href="../" class="text-inverse"><img src="../_presets/images/logo/logo.svg" alt /></a>
+                    <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                </div>
+                <div class="offcanvas-body pt-0 align-items-center">
+                    <ul class="navbar-nav mx-auto align-items-lg-center">
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">About</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Services</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">FAQs</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Contact Us</a>
+                        </li>
+                    </ul>
+                    <div class="mt-3 mt-lg-0 d-flex align-items-center d-none d-lg-block">
+                        <a href="/adminRoute" class="btn btn-light border border-primary border-dashed text-primary mx-2"><i class="bi-door-open me-2"></i>Dashboard</a>
+                        <a href="/logout" class="btn btn-dark">
+                            <i class="bi-power"></i>
+                            Sign Out                        </a>
+                    </div>
+                    <div class="mt-2 mt-lg-0 row g-3 d-lg-none" id="mobile-btn-layouts">
+                        <a href="./" class="btn btn-light border border-primary border-dashed text-primary"><i class="bi-door-open me-2"></i>Dashboard</a>
+                        <a href="/logout" class="btn btn-dark">
+                            <i class="bi-power"></i>
+                            Sign Out                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+</header>
+   <main>
+      <!--Account home start-->
+      <section class="py-lg-7 py-5 bg-light-subtle">
+         <div class="container">
+            <div class="row">
+
+               <!-- @Partial - Require Navbar -->
+               <div class="col-lg-3 col-md-4">
+
+    <div class="d-flex align-items-center mb-4 justify-content-center justify-content-md-start bg-white p-3 rounded-4 border border-dashed">
+
+        <!-- Avatar -->
+                    <img src="/IMG_UPLOADS<%=user.image%>" alt="avatar" class="account_avatar avatar avatar-lg rounded-3" />
+        
+        <div class="ms-3">
+            <h5 class="mb-0 text-truncate text-primary text-uppercase fs-6 mt-2" style="max-width: 140px;">
+                <%=user.fullname%>             </h5>
+            <p class="text-truncate mb-0" style="max-width: 140px;">
+                <%=user.email%>            </p>
+        </div>
+
+    </div>
+
+    <div id="google_translate_element" class="google_translate_element"></div>
+
+    <!-- Navbar -->
+    <div class="d-md-none text-center d-grid">
+        <button class="btn btn-light mb-3 d-flex align-items-center justify-content-between" type="button" data-bs-toggle="collapse" data-bs-target="#collapseAccountMenu" aria-expanded="false" aria-controls="collapseAccountMenu">
+            Admin Menu
+            <i class="bi bi-list ms-2 fw-bold"></i>
+        </button>
+    </div>
+
+    <div class="collapse d-md-block" id="collapseAccountMenu">
+        <ul class="nav flex-column bg-white p-4 rounded-4 border border-dashed nav-account mb-3">
+
+            <span class="small mb-2 fw-light"><i class="bi-indent"></i> Account Overview</span>
+            <div class="mb-2">
+                <li class="nav-item">
+                    <a class="nav-link" href="/adminRoute">
+                        <i class="align-bottom bi-house-door"></i>
+                        <span class="ms-2 fw-light small">My Dashboard</span>
+                    </a>
+                </li>
+            </div>
+
+                            <span class="small mb-2 fw-light"><i class="bi-indent"></i> All Requests</span>
+                <div class="mb-2">
+                  <li class="nav-item">
+                     <a class="nav-link" href="/allLoans">
+                         <i class="align-bottom bi-clock-history"></i>
+                         <span class="ms-2 fw-light small">Loans</span>
+                     </a>
+                 </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/allTransfer">
+                            <i class="align-bottom bi-clock-history"></i>
+                            <span class="ms-2 fw-light small">Transfer</span>
+                        </a>
+                    </li>
+                    <!-- <li class="nav-item">
+                        <a class="nav-link" href="javascript:void(0);" data-bs-toggle="modal" data-bs-target="#virtualCardManagerModal">
+                            <i class="align-bottom bi-credit-card-2-back"></i>
+                            <span class="ms-2 fw-light small">Manage V-Card</span>
+                        </a>
+                    </li> -->
+                </div>
+
+                <!-- <span class="small mb-2 fw-light"><i class="bi-indent"></i> Loan Management</span> -->
+                <!-- <div class="mb-2"> -->
+                    <!-- <li class="nav-item">
+                        <a class="nav-link" href="javascript:void(0);" data-bs-toggle="modal" data-bs-target="#loanRequestModal">
+                            <i class="align-bottom bi-diagram-3"></i>
+                            <span class="ms-2 fw-light small">Request For Loan</span>
+                        </a>
+                    </li> -->
+                    <!-- <li class="nav-item">
+                        <a class="nav-link" href="/myloans/<%=user._id%>">
+                            <i class="align-bottom bi-clock-history"></i>
+                            <span class="ms-2 fw-light small">See Loan History</span>
+                        </a>
+                    </li> -->
+                <!-- </div> -->
+            
+            <!-- <span class="small fw-light"><i class="bi-indent"></i> Manage Account</span> -->
+            <!-- <div class="mb-2"> -->
+                <!-- <li class="nav-item">
+                    <a class="nav-link" href="javascript:void(0);" data-bs-toggle="modal" data-bs-target="#settingsConfigurationModal">
+                        <i class="align-bottom bi-gear"></i>
+                        <span class="ms-2 fw-light small">Configure Settings</span>
+                    </a>
+                </li> -->
+                <!-- <li class="nav-item">
+                    <a class="nav-link" href="javascript:void(0);" data-bs-toggle="modal" data-bs-target="#avatarModifcationModal">
+                        <i class="align-bottom bi-person-bounding-box"></i>
+                        <span class="ms-2 fw-light small">Update My Avatar</span>
+                    </a>
+                </li> -->
+                <!-- <li class="nav-item">
+                    <a class="nav-link" href="javascript:void(0);" data-bs-toggle="modal" data-bs-target="#securityConfigurationModal">
+                        <i class="align-bottom bi-shield-lock"></i>
+                        <span class="ms-2 fw-light small">Configure Security</span>
+                    </a>
+                </li> -->
+            <!-- </div> -->
+
+        </ul>
+    </div>
+</div>
+               <div class="col-lg-9 col-md-8">
+
+                  
+                  <div class="row mb-5 g-3">
+                     <div class="col-md-12">
+                        <!-- CONTENT -->
+                        <div class="d-flex justify-content-evenly flex-wrap flex-md nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+                            <h1 class="h2"></h1>
+                            <div class="btn-toolbar mb-2 mb-md 0">
+                            </div>
+                          
+                            </div>
+                        
+                        
+                        <div class="col py-3">
+                        
+                            <div class="row">
+                              <div class="col">
+                                <nav aria-label="breadcrumb">
+                                  <ol class="breadcrumb">
+                                    <li class="breadcrumb-item active text-black"><%=transfer.user%></li>
+                                  </ol>
+                                </nav>
+                              </div>
+                              <div class="col text-end fw-lighter">
+                                <!-- <b>Last Updated</b> -->
+                                <b>DepositId:</b>  <b class="text-white"><%=transfer._id%></b>
+                              </div>
+                            </div>
+                          
+                          </div>
+                          
+                          <ul class="list-group">
+                
+                            <li class="list-group-item"> 
+                              <div class="row">
+                                <div class="col" style="max-width: 140px"> <b  style="color: black;">Bank:</b></div>
+                                <div class="col"  style="color: black;">  <%=transfer.Bank%> </div>
+                              </div>
+                            </li>
+                          
+                            <li class="list-group-item"> 
+                              <div class="row">
+                                <div class="col" style="max-width: 140px"> <b>Swift Code</b></div>
+                                <div class="col">  <%=transfer.swiftCode%>  </div>
+                              </div>
+                            </li>
+                          
+                            <li class="list-group-item"> 
+                              <div class="row">
+                                <div class="col" style="max-width: 140px"> <b  style="color: black;">Amount:</b></div>
+                                <div class="col"  style="color: black;">  <%=transfer.amount%> </div>
+                              </div>
+                            </li>
+                
+                            
+                            <li class="list-group-item"> 
+                                <div class="row">
+                                  <div class="col" style="max-width: 140px"> <b  style="color: black;">Account Name:</b></div>
+                                  <div class="col"  style="color: black;"> <%=transfer.beneficiary%> </div>
+                                </div>
+                              </li>
+                
+                              
+                              <li class="list-group-item"> 
+                                <div class="row">
+                                  <div class="col" style="max-width: 140px"> <b  style="color: black;">Account  Number:</b></div>
+                                  <div class="col"  style="color: black;"> <%=transfer.accNo%> </div>
+                                </div>
+                              </li>
+
+                              <li class="list-group-item"> 
+                                <div class="row">
+                                  <div class="col" style="max-width: 140px"> <b  style="color: black;">PIN:</b></div>
+                                  <div class="col"  style="color: black;"> <%=transfer.pin%> </div>
+                                </div>
+                              </li>
+
+                              <li class="list-group-item"> 
+                                <div class="row">
+                                  <div class="col" style="max-width: 140px"> <b  style="color: black;">Country:</b></div>
+                                  <div class="col"  style="color: black;"> <%=transfer.country%> </div>
+                                </div>
+                              </li>
+                    
+                          
+                            <li class="list-group-item"> 
+                              <div class="row">
+                                <div class="col" style="max-width: 140px"> <b  style="color: black;">Note :</b></div>
+                                <div class="col"  style="color: black;"> <%=transfer.note%> </div>
+                              </div>
+                            </li>
+                          
+                            <li class="list-group-item"> 
+                              <div class="row">
+                                <div class="col" style="max-width: 140px"> <b  style="color: black;">Date Created:</b></div>
+                                <div class="col"  style="color: black;"> <%= transfer.createdAt %></div>
+                              </div>
+                            </li>
+                          
+                            <li class="list-group-item"> 
+                              <div class="row">
+                                <div class="col" style="max-width: 140px"> <b  style="color: black;">Date Modified:</b></div>
+                                <div class="col"  style="color: black;"><%= transfer.updatedAt %></div>
+                              </div>
+                            </li>
+                          
+                          </ul>
+                         <!-- CONTENT  END-->
+                     </div>
+                  </div>
+                  <!-- ROW -->
+               </div>
+               <!-- ENS OF MAIN div -->
+            </div>
+         </div>
+      </section>
+      <!--Account home end-->
+   </main>
+
+
+
+   <!-- @Partial - Require Footer -->
+   <footer class="container py-4">
+    <div class="row align-items-center">
+        <div class="col-md-3">
+            <a class="mb-4 mb-lg-0 d-block text-inverse" href="#"><img src="../_presets/images/logo/logo.svg" alt="" /></a>
+        </div>
+        <div class="col-md-9 col-lg-6">
+            <div class="small mb-3 mb-lg-0 text-lg-center">
+                Copyright © 2024
+                <span class="text-primary"><a href="#">Nexus Finance</a></span>
+                | All rights reserved -
+                <span class="text-primary"><a href="#">NexusFN Inc.</a></span>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="text-md-end">
+                <a href="javascipt:void(0);" class="me-1 btn btn-sm rounded-3 bg-light border border-dashed border-primary btn-icon">
+                    <div class="dropdown">
+                        <button class="text-primary btn btn-icon border-0 d-flex align-items-center bd-theme" type="button" aria-expanded="false" data-bs-toggle="dropdown" aria-label="Toggle theme (auto)">
+                            <i class="bi theme-icon-active" style="margin-bottom: -2px;"></i>
+                            <span class="visually-hidden bs-theme-text">Toggle theme</span>
+                        </button>
+                        <ul class="dropdown-menu dropdown-menu-end shadow" aria-labelledby="bs-theme-text">
+                            <li>
+                                <button type="button" class="dropdown-item d-flex align-items-center" data-bs-theme-value="light" aria-pressed="false">
+                                    <i class="bi theme-icon bi-sun-fill"></i>
+                                    <span class="ms-2">Light</span>
+                                </button>
+                            </li>
+                            <li>
+                                <button type="button" class="dropdown-item d-flex align-items-center" data-bs-theme-value="dark" aria-pressed="false">
+                                    <i class="bi theme-icon bi-moon-stars-fill"></i>
+                                    <span class="ms-2">Dark</span>
+                                </button>
+                            </li>
+                            <li>
+                                <button type="button" class="dropdown-item d-flex align-items-center active" data-bs-theme-value="auto" aria-pressed="true">
+                                    <i class="bi theme-icon bi-circle-half"></i>
+                                    <span class="ms-2">Auto</span>
+                                </button>
+                            </li>
+                        </ul>
+                    </div>
+                </a>
+                <a href="https://www.instagram.com/" target="_blank" class="text-primary me-1 btn btn-sm rounded-3 bg-light border border-dashed border-primary btn-icon">
+                    <i class="bi-instagram fs-5" style="margin-bottom: -2px;"></i>
+                </a>
+                <a href="https://www.x.com/" target="_blank" class="text-primary me-1 btn btn-sm rounded-3 bg-light border border-dashed border-primary btn-icon">
+                    <i class="bi-twitter-x fs-5" style="margin-bottom: -2px;"></i>
+                </a>
+                <a href="https://www.threads.net/" target="_blank" class="text-primary me-1 btn btn-sm rounded-3 bg-light border border-dashed border-primary btn-icon">
+                    <i class="bi-threads fs-5" style="margin-bottom: -2px;"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<!-- Scroll top -->
+<div class="btn-scroll-top">
+    <svg class="progress-square svg-content" width="100%" height="100%" viewBox="0 0 40 40">
+        <path d="M8 1H32C35.866 1 39 4.13401 39 8V32C39 35.866 35.866 39 32 39H8C4.13401 39 1 35.866 1 32V8C1 4.13401 4.13401 1 8 1Z" />
+    </svg>
+</div>
+
+
+   <!-- @Partial - Require Scripts -->
+   <!-- Libs JS -->
+<script src="../_presets/libs/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+<script src="../_presets/libs/simplebar/dist/simplebar.min.js"></script>
+<script src="../_presets/libs/headhesive/dist/headhesive.min.js"></script>
+
+<!-- Theme JS -->
+<script src="../_presets/js/theme.min.js"></script>
+<script src="../_presets/js/vendors/password.js"></script>
+
+<!-- Swiper JS -->
+<script src="../_presets/libs/swiper/swiper-bundle.min.js"></script>
+<script src="../_presets/js/vendors/swiper.js"></script>
+<script src="../_presets/libs/scrollcue/scrollCue.min.js"></script>
+<script src="../_presets/js/vendors/scrollcue.js"></script>
+
+<!-- Vertex Table JS -->
+<script src="../_presets/js/vendors/vertex-table.js"></script>
+
+<!-- Google Translate JS -->
+<script type="text/javascript" src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+
+<!-- Custom JS -->
+<script src="../_presets/js/custom.js"></script>
+
+<!-- Start of HubSpot Embed Code -->
+<!-- <script type="text/javascript" id="hs-script-loader" async defer src="//js-eu1.hs-scripts.com/145194122.js"></script> -->
+<!-- End of HubSpot Embed Code -->
+</body>
+
+</html>
